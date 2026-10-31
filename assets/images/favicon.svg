@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
     <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E3F20"/>
-      <stop offset="100%" stop-color="#4A7C43"/>
+      <stop offset="0%" stop-color="#0B4D3C"/>
+      <stop offset="100%" stop-color="#1B6A53"/>
     </linearGradient>
-    <linearGradient id="tasselGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#C88B38"/>
-      <stop offset="100%" stop-color="#EED6B3"/>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2EA44F"/>
+      <stop offset="100%" stop-color="#6EE7B7"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="url(#capGrad)"/>
   <!-- Cap Diamond -->
-  <polygon points="32,16 54,26 32,36 10,26" fill="#FAF7F0"/>
+  <polygon points="32,16 54,26 32,36 10,26" fill="#FDFBF7"/>
   <!-- Cap Skull Base -->
-  <path d="M18,30.5 L18,40 C18,45 24,49 32,49 C40,49 46,45 46,40 L46,30.5 C42,34 37,36 32,36 C27,36 22,34 18,30.5 Z" fill="#FAF7F0" opacity="0.9"/>
+  <path d="M18,30.5 L18,40 C18,45 24,49 32,49 C40,49 46,45 46,40 L46,30.5 C42,34 37,36 32,36 C27,36 22,34 18,30.5 Z" fill="#FDFBF7" opacity="0.95"/>
   <!-- Tassel -->
-  <path d="M52,27 L52,43 C52,44 50.5,45 49,45 C47.5,45 46,44 46,43 L46,41" fill="none" stroke="url(#tasselGrad)" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="52" cy="27" r="2.5" fill="#C88B38"/>
-  <circle cx="47.5" cy="43.5" r="2.5" fill="#C88B38"/>
+  <path d="M52,27 L52,43 C52,44 50.5,45 49,45 C47.5,45 46,44 46,43 L46,41" fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="52" cy="27" r="2.5" fill="#2EA44F"/>
+  <circle cx="47.5" cy="43.5" r="2.5" fill="#2EA44F"/>
 </svg>

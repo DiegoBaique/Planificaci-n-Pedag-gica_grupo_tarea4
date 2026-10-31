@@ -3,743 +3,664 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evaluación del Pensamiento Crítico con IA Gemini | Maestría en IA para la Educación</title>
+  <title>Evaluación del Pensamiento Crítico con IA Gemini | UNEMI</title>
   
   <!-- SEO Técnico y Metadatos de Redes Sociales -->
-  <meta name="description" content="Diseño metodológico de un instrumento analítico integral con apoyo de Gemini como Inteligencia Artificial, mitigando el sedentarismo intelectual y promoviendo el discernimiento ético en el Aprendizaje Basado en Problemas (ABP).">
-  <meta name="keywords" content="Pensamiento Crítico, Inteligencia Artificial, Gemini AI, Rúbrica Analítica, Aprendizaje Basado en Problemas, ABP, Competencias Digitales, Educación Superior, Desinformación, UNEMI">
-  <meta name="author" content="Carlos Pa., Jimena, Robert, Carlos Pulla, Diego">
+  <meta name="description" content="Diseño metodológico y rúbrica analítica integral para evaluar el pensamiento crítico y la interacción ética con Gemini IA en estudiantes universitarios. Universidad Estatal de Milagro (UNEMI).">
+  <meta name="keywords" content="Pensamiento Crítico, Inteligencia Artificial, Gemini IA, UNEMI, Rúbrica Analítica, Aprendizaje Basado en Problemas, ABP, Competencias Digitales, Desinformación, Educación Superior">
+  <meta name="author" content="Carlos Luis Pulla Freire, Robert Bryan Merejildo Pincay, Carlos Andrés Paredes Rosado, Diego Fernando Baique Chilito, Jimena Jamileth Orellana Rodríguez">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1E3F20">
+  <meta name="theme-color" content="#0B4D3C">
   
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph / Redes Sociales -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Evaluación del Pensamiento Crítico con IA Gemini | Maestría en IA para la Educación">
-  <meta property="og:description" content="Instrumento analítico integral para evaluar el pensamiento crítico y la interacción ética con IA en estudiantes universitarios.">
+  <meta property="og:title" content="Evaluación del Pensamiento Crítico con IA Gemini | UNEMI">
+  <meta property="og:description" content="Instrumento metodológico en Aprendizaje Basado en Problemas (ABP) asistido por IA Gemini para la verificación de desinformación.">
   <meta property="og:image" content="assets/images/screen.png">
   <meta property="og:locale" content="es_EC">
-  <meta property="og:site_name" content="Maestría en IA para la Educación">
+  <meta property="og:site_name" content="UNEMI - Maestría en IA para la Educación">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evaluación del Pensamiento Crítico con IA Gemini">
+  <meta name="twitter:title" content="Evaluación del Pensamiento Crítico con IA Gemini | UNEMI">
   <meta name="twitter:description" content="Instrumento metodológico en Aprendizaje Basado en Problemas (ABP) asistido por IA Gemini.">
   <meta name="twitter:image" content="assets/images/screen.png">
 
-  <!-- Favicon Académico Local -->
+  <!-- Favicon Vectorial Académico Local -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="apple-touch-icon" href="assets/images/favicon.svg">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Lora (Tipografía del Sistema) -->
+  <!-- Google Fonts: Plus Jakarta Sans y Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Hojas de Estilos Locales (Optimización y Rendimiento Offline) -->
+  <!-- Hoja de Estilos de Terceros (AOS) -->
   <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+  
+  <!-- Estilos Personalizados UNEMI -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Tailwind CSS Engine Local con Fallback -->
+  <!-- Tailwind CSS Engine Local con Fallback CDN -->
   <script src="assets/vendor/tailwind/tailwind.min.js"></script>
+  <script>
+    if (typeof tailwind === 'undefined') {
+      document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+    }
+  </script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            brand: {
-              cream: '#FAF7F0',
-              creamLight: '#FCFAF7',
-              creamDark: '#EFE9DE',
-              forest: '#1E3F20',
-              emerald: '#2D5A27',
-              leaf: '#4A7C43',
-              olive: '#708E58',
-              moss: '#3B6032',
-              earth: '#5A3D28',
-              earthLight: '#8C6747',
-              sand: '#D4C3A3',
-              ochre: '#C88B38',
-              amberSoft: '#EED6B3',
-            }
-          },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            serif: ['Lora', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            unemi: {
+              primary: '#0B4D3C',       /* Verde bosque institucional UNEMI */
+              light: '#1B6A53',         /* Verde hoja vibrante */
+              accent: '#2EA44F',        /* Verde esmeralda vivo */
+              subtle: '#E8F3EE',        /* Tinte verde menta orgánico */
+              earth: '#6D4C41',         /* Tono café tierra cálido */
+              sand: '#A1887F',          /* Tono arena suave */
+              cream: '#FDFBF7',         /* Fondo crema limpio */
+              dark: '#14261C',          /* Texto oscuro elegante */
+            }
           }
         }
       }
     };
   </script>
 
-  <!-- Lucide Icons Local -->
-  <script src="assets/vendor/lucide/lucide.min.js"></script>
-
   <!-- Datos Estructurados JSON-LD (SEO Académico) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "name": "Evaluación del Pensamiento Crítico en Estudiantes Universitarios mediante el Análisis de Información Digital",
-    "headline": "Diseño metodológico de un instrumento analítico integral con apoyo de Gemini como Inteligencia Artificial",
-    "inLanguage": "es",
+    "headline": "Evaluación del Pensamiento Crítico en Estudiantes Universitarios mediante el Análisis de Información Digital con Gemini IA",
+    "description": "Diseño instruccional y validación de una rúbrica analítica y protocolo ABP con apoyo socrático de Gemini IA.",
     "author": [
-      { "@type": "Person", "name": "Carlos Pa." },
-      { "@type": "Person", "name": "Jimena" },
-      { "@type": "Person", "name": "Robert" },
-      { "@type": "Person", "name": "Carlos Pulla" },
-      { "@type": "Person", "name": "Diego" }
+      { "@type": "Person", "name": "Carlos Luis Pulla Freire" },
+      { "@type": "Person", "name": "Robert Bryan Merejildo Pincay" },
+      { "@type": "Person", "name": "Carlos Andrés Paredes Rosado" },
+      { "@type": "Person", "name": "Diego Fernando Baique Chilito" },
+      { "@type": "Person", "name": "Jimena Jamileth Orellana Rodríguez" }
     ],
-    "about": [
-      "Pensamiento Crítico",
-      "Inteligencia Artificial en Educación",
-      "Aprendizaje Basado en Problemas",
-      "Alfabetización Mediática"
-    ],
-    "educationalLevel": "Educación Superior (Pregrado Universitario)",
-    "course": {
-      "@type": "Course",
-      "name": "Planificación Pedagógica en el Contexto del Aprendizaje Participativo",
-      "educationalCredentialAwarded": "Maestría en Inteligencia Artificial para la Educación"
-    }
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Universidad Estatal de Milagro (UNEMI)",
+      "url": "https://www.unemi.edu.ec"
+    },
+    "inLanguage": "es-EC",
+    "genre": "Investigación e Innovación Pedagógica",
+    "about": ["Pensamiento Crítico", "Inteligencia Artificial", "Rúbricas Analíticas", "Aprendizaje Basado en Problemas"]
   }
   </script>
 </head>
-<body class="selection:bg-brand-leaf selection:text-white">
+<body class="bg-unemi-cream text-unemi-dark font-sans antialiased overflow-x-hidden selection:bg-unemi-accent selection:text-white">
 
-  <!-- Enlace accesible para lectores de pantalla y navegación por teclado -->
+  <!-- Enlace accesible de salto al contenido (a11y) -->
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-  <!-- TOP HEADER / NAV STICKY -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF7F0]/90 backdrop-blur-md border-b border-brand-earth/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR (MOBILE FIRST CON RESPONSIVE) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-unemi-primary/10 shadow-sm transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       
-      <!-- Brand Logo & Academic Context -->
-      <a href="#" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-emerald rounded-lg p-1" aria-label="Ir al inicio - Maestría en IA para la Educación">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-forest to-brand-leaf flex items-center justify-center text-white shadow-md shadow-brand-forest/20 group-hover:scale-105 transition-transform">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap w-5 h-5" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+      <!-- Logo y Membrete Institucional -->
+      <a href="#inicio" class="flex items-center space-x-3 group" aria-label="UNEMI Maestría en IA para la Educación">
+        <div class="w-10 h-10 rounded-xl bg-unemi-primary flex items-center justify-center text-white shadow-md shadow-unemi-primary/20 group-hover:bg-unemi-light transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="graduation-cap" aria-hidden="true" class="w-6 h-6"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
         </div>
         <div>
-          <span class="block text-xs uppercase tracking-widest font-bold text-brand-earthLight">Maestría en IA para la Educación</span>
-          <span class="font-serif font-bold text-brand-forest text-base leading-tight group-hover:text-brand-emerald transition-colors">Planificación Pedagógica Participativa</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-unemi-light block">UNEMI Maestría</span>
+          <span class="text-sm font-extrabold text-unemi-primary tracking-tight leading-none">IA para la Educación</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-brand-forest/80" aria-label="Navegación principal">
-        <a href="#introduccion" class="hover:text-brand-leaf transition-colors py-1">1. Introducción</a>
-        <a href="#rubrica" class="hover:text-brand-leaf transition-colors py-1">2. Rúbrica Analítica</a>
-        <a href="#evidencia-ia" class="hover:text-brand-leaf transition-colors py-1">3. Evidencia Gemini</a>
-        <a href="#protocolo" class="hover:text-brand-leaf transition-colors py-1">4. Protocolo (6 Preguntas)</a>
-        <a href="#reflexion" class="hover:text-brand-leaf transition-colors py-1">5. Reflexión y Autores</a>
-        <a href="#bibliografia" class="hover:text-brand-leaf transition-colors py-1">Bibliografía</a>
+      <!-- Menú de Navegación de Escritorio -->
+      <nav class="hidden md:flex items-center space-x-2" aria-label="Navegación principal">
+        <a href="#introduccion" class="text-xs font-semibold px-3 py-2 rounded-xl text-stone-600 hover:text-unemi-primary hover:bg-unemi-subtle transition duration-300">Fundamentación</a>
+        <a href="#rubrica" class="inline-flex items-center text-xs font-semibold px-3 py-2 rounded-xl bg-unemi-subtle text-unemi-primary hover:bg-unemi-primary hover:text-white transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="table" aria-hidden="true" class="w-3.5 h-3.5 mr-1.5"><path d="M12 3v18"></path><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M3 15h18"></path></svg> Rúbrica
+        </a>
+        <a href="#protocolo" class="text-xs font-semibold px-3 py-2 rounded-xl text-stone-600 hover:text-unemi-primary hover:bg-unemi-subtle transition duration-300">Protocolo</a>
+        <a href="#reflexiones" class="text-xs font-semibold px-3 py-2 rounded-xl text-stone-600 hover:text-unemi-primary hover:bg-unemi-subtle transition duration-300">Reflexiones</a>
+        <a href="#evidencias" class="inline-flex items-center text-xs font-bold px-3.5 py-2 rounded-xl bg-unemi-primary text-white shadow-sm hover:bg-unemi-light transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" aria-hidden="true" class="w-3.5 h-3.5 mr-1.5 text-emerald-300"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg> Explorar Tarea
+        </a>
       </nav>
 
-      <!-- Action Button & Mobile Menu Toggle -->
-      <div class="flex items-center gap-3">
-        <a href="https://sites.google.com/unemi.edu.ec/noticiasinformativas/full-page-embed" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-brand-forest hover:bg-brand-emerald rounded-full transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-emerald" aria-label="Abrir Portal Noticia Falsa de UNEMI en una nueva pestaña">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3.5 h-3.5" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
-          <span>Portal Noticia Falsa</span>
+      <!-- Botones de Navegación Móvil -->
+      <div class="flex items-center space-x-2 md:hidden">
+        <a href="#evidencias" class="inline-flex items-center text-xs font-bold px-3 py-2 rounded-xl bg-unemi-primary text-white shadow-sm hover:bg-unemi-light transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" aria-hidden="true" class="w-3.5 h-3.5 mr-1 text-emerald-300"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg> Explorar
         </a>
-
-        <!-- Botón Menú Móvil (Responsive A11y) -->
-        <button id="mobile-menu-btn" type="button" class="lg:hidden p-2 rounded-xl text-brand-forest hover:bg-brand-creamDark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-emerald" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        <button id="mobile-menu-btn" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" class="p-2 rounded-xl text-unemi-primary hover:bg-unemi-subtle transition focus:outline-none focus:ring-2 focus:ring-unemi-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
         </button>
       </div>
+
     </div>
 
-    <!-- Menú Móvil Desplegable (Drawer Accesible) -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-brand-earth/10 bg-brand-cream/95 backdrop-blur-xl px-6 py-6 shadow-xl transition-all duration-300" role="dialog" aria-modal="true" aria-label="Menú móvil">
-      <div class="flex items-center justify-between pb-4 border-b border-brand-sand/50 mb-4">
-        <span class="text-xs uppercase tracking-widest font-bold text-brand-earthLight">Secciones del Proyecto</span>
-        <button id="mobile-menu-close" type="button" class="p-1.5 rounded-lg text-brand-forest hover:bg-brand-creamDark" aria-label="Cerrar menú móvil">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
-        </button>
-      </div>
-      <nav class="flex flex-col gap-3 text-base font-semibold text-brand-forest">
-        <a href="#introduccion" class="mobile-nav-link p-2 rounded-lg hover:bg-brand-creamDark hover:text-brand-leaf transition-colors">1. Introducción</a>
-        <a href="#rubrica" class="mobile-nav-link p-2 rounded-lg hover:bg-brand-creamDark hover:text-brand-leaf transition-colors">2. Rúbrica Analítica</a>
-        <a href="#evidencia-ia" class="mobile-nav-link p-2 rounded-lg hover:bg-brand-creamDark hover:text-brand-leaf transition-colors">3. Evidencia Gemini</a>
-        <a href="#protocolo" class="mobile-nav-link p-2 rounded-lg hover:bg-brand-creamDark hover:text-brand-leaf transition-colors">4. Protocolo (6 Preguntas)</a>
-        <a href="#reflexion" class="mobile-nav-link p-2 rounded-lg hover:bg-brand-creamDark hover:text-brand-leaf transition-colors">5. Reflexión y Autores</a>
-        <a href="#bibliografia" class="mobile-nav-link p-2 rounded-lg hover:bg-brand-creamDark hover:text-brand-leaf transition-colors">Bibliografía</a>
-      </nav>
+    <!-- Cajón de Navegación Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-unemi-primary/10 bg-white/98 px-4 pt-3 pb-5 space-y-2">
+      <a href="#introduccion" class="mobile-nav-link flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-unemi-subtle hover:text-unemi-primary transition">
+        <span>I. Fundamentación Científica</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="w-4 h-4 text-stone-400"><path d="m9 18 6-6-6-6"></path></svg>
+      </a>
+      <a href="#rubrica" class="mobile-nav-link flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-unemi-subtle hover:text-unemi-primary transition">
+        <span>II. Rúbrica Analítica</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="w-4 h-4 text-stone-400"><path d="m9 18 6-6-6-6"></path></svg>
+      </a>
+      <a href="#evidencias" class="mobile-nav-link flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-unemi-subtle hover:text-unemi-primary transition">
+        <span>III. Prompts en Gemini IA</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="w-4 h-4 text-stone-400"><path d="m9 18 6-6-6-6"></path></svg>
+      </a>
+      <a href="#protocolo" class="mobile-nav-link flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-unemi-subtle hover:text-unemi-primary transition">
+        <span>IV. Protocolo de Evaluación</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="w-4 h-4 text-stone-400"><path d="m9 18 6-6-6-6"></path></svg>
+      </a>
+      <a href="#reflexiones" class="mobile-nav-link flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-unemi-subtle hover:text-unemi-primary transition">
+        <span>V. Reflexiones del Equipo</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="w-4 h-4 text-stone-400"><path d="m9 18 6-6-6-6"></path></svg>
+      </a>
+      <a href="#referencias" class="mobile-nav-link flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-unemi-subtle hover:text-unemi-primary transition">
+        <span>VI. Referencias Científicas</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="w-4 h-4 text-stone-400"><path d="m9 18 6-6-6-6"></path></svg>
+      </a>
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
   <main id="main-content">
 
-    <!-- HERO SECTION: SCROLL STORYTELLING BEGINS -->
-    <section class="relative pt-36 pb-24 md:pt-44 md:pb-32 px-6 hero-glow overflow-hidden" aria-labelledby="hero-heading">
-      <div class="max-w-6xl mx-auto text-center relative z-10">
+    <!-- SECCIÓN HERO: SCROLL-STORYTELLING & CONTEXTO ACADÉMICO -->
+    <section id="inicio" class="relative pt-8 pb-16 px-4 sm:px-6 gradient-hero overflow-hidden border-b border-unemi-primary/10">
+      <!-- Fondos decorativos orgánicos -->
+      <div class="absolute -top-24 -right-24 w-80 h-80 bg-unemi-subtle/80 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute top-1/2 -left-20 w-72 h-72 bg-amber-100/60 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="max-w-4xl mx-auto relative z-10">
         
-        <!-- Academic Pills -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-sand/30 border border-brand-earth/20 mb-8" data-aos="fade-down">
-          <span class="w-2.5 h-2.5 rounded-full bg-brand-leaf animate-pulse" aria-hidden="true"></span>
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-forest">MÓDULO: Aprendizaje Participativo • Tarea Autónoma</span>
+        <!-- Badges de contexto académico -->
+        <div class="flex flex-wrap items-center gap-2 mb-4" data-aos="fade-down">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-unemi-subtle text-unemi-primary border border-unemi-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bookmark" aria-hidden="true" class="w-3 h-3 mr-1.5"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"></path></svg> Tarea de Aprendizaje Autónomo
+          </span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-stone-200/80 text-unemi-earth">
+            Módulo: Planificación Pedagógica
+          </span>
         </div>
 
-        <!-- Main Headline -->
-        <h1 id="hero-heading" class="text-3xl sm:text-5xl md:text-6xl font-serif font-bold text-brand-forest leading-tight tracking-tight mb-8" data-aos="fade-right">
-          Evaluación del Pensamiento Crítico en Estudiantes Universitarios mediante el Análisis de Información Digital
+        <!-- Título principal -->
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-unemi-primary tracking-tight leading-snug mb-5" data-aos="fade-right">
+          Evaluación del Pensamiento Crítico en Estudiantes Universitarios mediante el Análisis de Información Digital con Gemini IA
         </h1>
 
-        <p class="max-w-3xl mx-auto text-lg md:text-xl text-brand-earth leading-relaxed font-normal mb-12" data-aos="fade-up">
-          Diseño metodológico de un instrumento analítico integral con apoyo de <strong class="text-brand-forest font-semibold">Gemini como Inteligencia Artificial</strong>, mitigando el sedentarismo intelectual y promoviendo el discernimiento ético en el Aprendizaje Basado en Problemas (ABP).
+        <!-- Resumen introductorio -->
+        <p class="text-sm sm:text-base text-stone-700 leading-relaxed font-body mb-8" data-aos="fade-up">
+          Diseño y validación de una estrategia pedagógica basada en <strong>Aprendizaje Basado en Problemas (ABP)</strong> para capacitar a jóvenes universitarios en la detección de noticias falsas, contraste de evidencias y el uso ético y reflexivo de la Inteligencia Artificial generativa.
         </p>
 
-        <!-- Key Meta Metrics -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12" data-aos="zoom-in">
-          <div class="bg-white/80 p-5 rounded-2xl border border-brand-earth/10 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl">
-            <span class="block text-2xl font-bold text-brand-forest font-serif">18 – 25</span>
-            <span class="text-xs text-brand-earthLight uppercase font-medium">Edad Universitaria</span>
-          </div>
-          <div class="bg-white/80 p-5 rounded-2xl border border-brand-earth/10 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl">
-            <span class="block text-2xl font-bold text-brand-leaf font-serif">4 Criterios</span>
-            <span class="text-xs text-brand-earthLight uppercase font-medium">Rúbrica Analítica</span>
-          </div>
-          <div class="bg-white/80 p-5 rounded-2xl border border-brand-earth/10 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl">
-            <span class="block text-2xl font-bold text-brand-ochre font-serif">ABP + IA</span>
-            <span class="text-xs text-brand-earthLight uppercase font-medium">Metodología Activa</span>
-          </div>
-          <div class="bg-white/80 p-5 rounded-2xl border border-brand-earth/10 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl">
-            <span class="block text-2xl font-bold text-brand-earth font-serif">Gemini AI</span>
-            <span class="text-xs text-brand-earthLight uppercase font-medium">Asistente Formativo</span>
+        <!-- Banner de Imagen interactiva de Sinergia Juicio Humano + IA -->
+        <div class="relative overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-xl rounded-2xl border border-unemi-primary/15 shadow-lg bg-white mb-8" data-aos="zoom-in">
+          <div class="aspect-[16/9] sm:aspect-[21/9] bg-gradient-to-tr from-unemi-primary via-unemi-light to-emerald-700 relative flex items-center justify-center p-6 text-white text-center">
+            <div class="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-15" aria-hidden="true"></div>
+            <div class="relative z-10 max-w-xl">
+              <span class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md mb-3 text-emerald-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" aria-hidden="true" class="w-7 h-7"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+              </span>
+              <h2 class="text-lg sm:text-2xl font-bold mb-2">Sinergia: Juicio Humano + Gemini IA</h2>
+              <p class="text-xs sm:text-sm text-emerald-100 font-light leading-relaxed">"La IA generativa potencia el orden superior de pensamiento solo cuando está guiada por la indagación activa y la contrastación rigurosa de fuentes."</p>
+            </div>
           </div>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-4" data-aos="fade-up">
-          <a href="#introduccion" class="px-8 py-3.5 rounded-full bg-brand-forest text-white font-semibold text-sm hover:bg-brand-emerald shadow-lg hover:shadow-brand-forest/20 transition-all flex items-center gap-2">
-            <span>Explorar Instrumento</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down w-4 h-4" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
-          </a>
-          <a href="#rubrica" class="px-8 py-3.5 rounded-full bg-white text-brand-forest border border-brand-earth/20 font-semibold text-sm hover:bg-brand-creamDark transition-all flex items-center gap-2 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-table-properties w-4 h-4 text-brand-leaf" aria-hidden="true"><path d="M15 3v18"></path><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M21 9H3"></path><path d="M21 15H3"></path></svg>
-            <span>Ver Rúbrica Completa</span>
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Organic Decorative Waves -->
-      <div class="absolute -bottom-1 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none" aria-hidden="true">
-        <svg class="relative block w-full h-12 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="currentColor">
-          <path d="M0,0 C150,90 400,100 600,40 C800,-20 1050,70 1200,30 L1200,120 L0,120 Z"></path>
-        </svg>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 1: INTRODUCCIÓN Y FUNDAMENTACIÓN CIENTÍFICA (Carlos Pa.) -->
-    <section id="introduccion" class="py-24 bg-white px-6">
-      <div class="max-w-6xl mx-auto">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-leaf" data-aos="fade-up">Fase 1 • Contexto Pedagógico</span>
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-forest mt-2" data-aos="fade-right">
-              1. Introducción y Fundamentación Curricular
-            </h2>
-            <p class="text-sm font-medium text-brand-earthLight mt-1">Liderado por: <span class="text-brand-forest font-semibold">Carlos Pa.</span></p>
-          </div>
-          <div class="flex items-center gap-3 bg-brand-cream px-4 py-2 rounded-xl border border-brand-sand/50" data-aos="fade-left">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-check w-5 h-5 text-brand-leaf" aria-hidden="true"><path d="M12 5v16"></path><path d="m16 12 2 2 4-4"></path><path d="M22 6V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2h4.001A2 2 0 0 0 22 17v-1.344"></path></svg>
-            <span class="text-xs font-bold text-brand-earth">Evidencia Científica 2025</span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          <!-- Left Column: Storytelling Text -->
-          <div class="lg:col-span-7 space-y-6 text-brand-earth leading-relaxed">
-            <div class="p-6 rounded-2xl bg-brand-creamLight border-l-4 border-brand-leaf shadow-sm" data-aos="fade-up">
-              <p class="text-base font-medium text-brand-forest">
-                El presente documento detalla el diseño de un instrumento de evaluación enmarcado en el módulo <strong>"Planificación Pedagógica en el Contexto del Aprendizaje Participativo"</strong>. Su objetivo central es evaluar la capacidad de los estudiantes universitarios para analizar críticamente la información digital, identificar noticias falsas y utilizar herramientas de inteligencia artificial de manera ética y responsable.
-              </p>
+        <!-- Tarjetas Resumen / Quick Metrics Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="p-4 bg-white/90 border border-unemi-primary/10 rounded-2xl shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-unemi-primary mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="w-5 h-5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
             </div>
-
-            <p data-aos="fade-up">
-              La pertinencia de este diseño se fundamenta en la literatura científica reciente. Diversos estudios han demostrado que la IA generativa tiene un impacto significativo y positivo en la mejora del pensamiento de orden superior (<em>higher order thinking</em>) de los estudiantes (<strong>Nie y otros, 2025</strong>). Sin embargo, este potencial debe ser evaluado empíricamente mediante instrumentos válidos. En este sentido, la evaluación del pensamiento crítico puede enriquecerse e integrarse mediante el uso de herramientas como ChatGPT o Gemini, bajo una necesaria comparación y validación con la evaluación humana (<strong>Trikoili y otros, 2025</strong>).
-            </p>
-
-            <p data-aos="fade-up">
-              Por otro lado, el diseño curricular abordado en la Unidad 2 y las metodologías activas de la Unidad 3 (como el <strong>Aprendizaje Basado en Problemas - ABP</strong>) cobran especial relevancia ante los riesgos actuales. <strong>Costa &amp; Murphy (2025)</strong> advierten que la IA generativa, si se controla sin criterio, puede fomentar un <em>"sedentarismo intelectual"</em> y propagar desinformación. Por ello, es indispensable formar criterio crítico y evaluar las competencias de búsqueda y selección de información digital de los universitarios (<strong>European Journal of Education, 2025</strong>).
-            </p>
-
-            <div class="p-6 rounded-2xl bg-brand-cream border border-brand-sand/60" data-aos="fade-up">
-              <h3 class="font-serif font-bold text-brand-forest mb-2 flex items-center gap-2 text-base">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target w-4 h-4 text-brand-ochre" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-                Propósito Dual del Instrumento
-              </h3>
-              <p class="text-sm text-brand-earth">
-                Evaluar de forma formativa y sumativa el proceso de indagación del estudiante frente a un reto ABP, su argumentación basada en evidencias y su interacción crítica con la IA (utilizando la herramienta <strong>Gemini</strong>). El diseño se ha realizado con el apoyo de esta IA, garantizando siempre la validación y el juicio humano en cada paso, tal como se recomienda en los lineamientos éticos del módulo.
-              </p>
-            </div>
+            <div class="text-lg font-extrabold text-unemi-primary">18–25 años</div>
+            <div class="text-xs text-stone-500">Población diana</div>
           </div>
 
-          <!-- Right Column: Visual Infographic & Nature Cards -->
-          <div class="lg:col-span-5 space-y-6">
-            
-            <div data-aos="zoom-in" class="relative group rounded-2xl overflow-hidden border border-brand-earth/15 shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl">
-              <!-- Simulated Academic Vector Visual with Nature/Tech Harmony -->
-              <div class="h-64 bg-gradient-to-br from-brand-forest via-brand-emerald to-brand-leaf p-6 flex flex-col justify-between text-white relative">
-                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                <div class="flex justify-between items-start z-10">
-                  <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-semibold uppercase tracking-wider">Metodología Activa</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert w-6 h-6 text-brand-amberSoft" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
-                </div>
-                <div class="z-10">
-                  <p class="text-xs uppercase tracking-widest text-brand-amberSoft font-semibold mb-1">Riesgo Cognitivo vs Oportunidad</p>
-                  <h3 class="text-xl font-serif font-bold leading-snug">Mitigación del "Sedentarismo Intelectual"</h3>
-                  <p class="text-xs text-white/80 mt-2">La indagación guiada promueve que la IA actúe como interlocutor socrático, no como sustituto del análisis.</p>
-                </div>
-              </div>
-              <div class="bg-brand-creamLight p-4 flex items-center justify-between text-xs text-brand-earth font-medium">
-                <span>Referencia clave: Costa &amp; Murphy (2025)</span>
-                <span class="text-brand-leaf font-bold">Unidad 2 &amp; 3</span>
-              </div>
+          <div class="p-4 bg-white/90 border border-unemi-primary/10 rounded-2xl shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-unemi-accent mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle" aria-hidden="true" class="w-5 h-5"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
             </div>
-
-            <!-- Pillars Summary -->
-            <div class="space-y-3" data-aos="fade-up">
-              <div class="p-4 rounded-xl bg-brand-cream flex items-start gap-4 border border-brand-sand/40 transform transition duration-500 hover:scale-105 hover:shadow-xl">
-                <div class="w-8 h-8 rounded-lg bg-brand-leaf/20 text-brand-leaf flex items-center justify-center shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-4 h-4" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
-                </div>
-                <div>
-                  <h4 class="text-sm font-bold text-brand-forest">Contraste Triangulado</h4>
-                  <p class="text-xs text-brand-earth">Obligatoriedad de contrastar al menos 3 fuentes confiables primarias y secundarias.</p>
-                </div>
-              </div>
-
-              <div class="p-4 rounded-xl bg-brand-cream flex items-start gap-4 border border-brand-sand/40 transform transition duration-500 hover:scale-105 hover:shadow-xl">
-                <div class="w-8 h-8 rounded-lg bg-brand-earthLight/20 text-brand-earthLight flex items-center justify-center shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-4 h-4" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
-                </div>
-                <div>
-                  <h4 class="text-sm font-bold text-brand-forest">Prompting Contextualizado</h4>
-                  <p class="text-xs text-brand-earth">Evaluación explícita de instrucciones formuladas a Gemini para auditar alucinaciones.</p>
-                </div>
-              </div>
-
-              <div class="p-4 rounded-xl bg-brand-cream flex items-start gap-4 border border-brand-sand/40 transform transition duration-500 hover:scale-105 hover:shadow-xl">
-                <div class="w-8 h-8 rounded-lg bg-brand-ochre/20 text-brand-ochre flex items-center justify-center shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale w-4 h-4" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
-                </div>
-                <div>
-                  <h4 class="text-sm font-bold text-brand-forest">Ética &amp; Transparencia</h4>
-                  <p class="text-xs text-brand-earth">Declaración rigurosa del rol de la IA y anexo obligatorio de prompts e interacciones.</p>
-                </div>
-              </div>
-            </div>
-
+            <div class="text-lg font-extrabold text-unemi-primary">4 Criterios</div>
+            <div class="text-xs text-stone-500">Dimensiones analíticas</div>
           </div>
 
+          <div class="p-4 bg-white/90 border border-unemi-primary/10 rounded-2xl shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-amber-700 mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bot" aria-hidden="true" class="w-5 h-5"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+            </div>
+            <div class="text-lg font-extrabold text-unemi-primary">Gemini IA</div>
+            <div class="text-xs text-stone-500">Andamiaje socrático</div>
+          </div>
+
+          <div class="p-4 bg-white/90 border border-unemi-primary/10 rounded-2xl shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
+            <div class="text-unemi-earth mb-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" aria-hidden="true" class="w-5 h-5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <div class="text-lg font-extrabold text-unemi-primary">Ética &amp; Sesgos</div>
+            <div class="text-xs text-stone-500">Derecho a corrección</div>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SECCIÓN 2: LA RÚBRICA ANALÍTICA (Jimena) -->
-    <section id="rubrica" class="py-24 bg-brand-cream px-6 border-y border-brand-sand/60">
-      <div class="max-w-7xl mx-auto">
+    <!-- SECCIÓN I: INTRODUCCIÓN Y FUNDAMENTACIÓN CIENTÍFICA -->
+    <section id="introduccion" class="py-14 px-4 sm:px-6 bg-white border-b border-unemi-primary/10 relative">
+      <div class="max-w-4xl mx-auto">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-leaf" data-aos="fade-up">Fase 2 • Instrumento de Medición</span>
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-forest mt-2" data-aos="fade-right">
-              2. Rúbrica Analítica: Informe de Verificación de Fuentes
-            </h2>
-            <p class="text-sm font-medium text-brand-earthLight mt-1">Elaborada por: <span class="text-brand-forest font-semibold">Jimena</span></p>
-          </div>
+        <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-unemi-light mb-2">
+          <span class="w-6 h-0.5 bg-unemi-light inline-block" aria-hidden="true"></span>
+          <span>Capítulo I</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-unemi-primary mb-6" data-aos="fade-right">
+          I. Introducción y Pertinencia Pedagógica
+        </h2>
 
-          <!-- Metadata Badges -->
-          <div class="flex flex-wrap gap-2" data-aos="fade-left">
-            <span class="px-3 py-1.5 rounded-lg bg-white text-xs font-bold text-brand-forest border border-brand-earth/15 shadow-sm">
-              Asignatura: Competencias Digitales
-            </span>
-            <span class="px-3 py-1.5 rounded-lg bg-brand-emerald text-xs font-bold text-white shadow-sm">
-              Nivel: Universitario (18–25)
-            </span>
-            <span class="px-3 py-1.5 rounded-lg bg-brand-ochre text-xs font-bold text-white shadow-sm">
-              Metodología: ABP + IA
-            </span>
-          </div>
+        <!-- Texto informativo y justificación científica -->
+        <div class="space-y-4 text-stone-700 font-body text-sm sm:text-base leading-relaxed" data-aos="fade-up">
+          <p>
+            El presente documento detalla el diseño de un instrumento de evaluación enmarcado en el módulo <strong>"Planificación Pedagógica en el Contexto del Aprendizaje Participativo"</strong>. Su objetivo central es evaluar la capacidad de los estudiantes universitarios para analizar críticamente la información digital, identificar noticias falsas y utilizar herramientas de inteligencia artificial de manera ética y responsable.
+          </p>
+          <p>
+            La pertinencia de este diseño se fundamenta en la literatura científica reciente. Diversos estudios han demostrado que la IA generativa tiene un impacto significativo y positivo en la mejora del pensamiento de orden superior (<em>higher order thinking</em>) de los estudiantes (Nie, Tian, Liu, Wu, &amp; Gou, 2025). Sin embargo, este potencial debe ser evaluado empíricamente mediante instrumentos válidos, integrando herramientas como ChatGPT o Gemini bajo una necesaria comparación y validación con la evaluación humana (Trikoili, Georgiou, Pappa, &amp; Pittich, 2025).
+          </p>
         </div>
 
-        <!-- Information Banner -->
-        <div class="bg-white rounded-2xl p-6 border border-brand-sand shadow-sm mb-8 flex flex-col md:flex-row items-center justify-between gap-4" data-aos="fade-up">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-brand-sand/30 flex items-center justify-center text-brand-forest shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-check w-6 h-6" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>
+        <!-- Tarjeta destacada: Riesgo del sedentarismo intelectual -->
+        <div class="mt-8 p-6 rounded-2xl bg-amber-50/70 border border-amber-200/60 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+          <div class="flex items-start space-x-4">
+            <div class="p-3 bg-amber-100 text-amber-900 rounded-xl flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="alert-triangle" aria-hidden="true" class="w-6 h-6"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
             </div>
             <div>
-              <h3 class="font-serif font-bold text-brand-forest text-base">Producto Evaluado: Informe de Verificación de Fuentes</h3>
-              <p class="text-xs text-brand-earth">Evaluación multidimensional de 4 criterios clave con ponderación del 100% al 25% o menos.</p>
+              <h3 class="text-base font-bold text-amber-950 mb-1">Riesgo Advertido: Sedentarismo Intelectual</h3>
+              <p class="text-xs sm:text-sm text-amber-900/90 leading-relaxed">
+                Costa &amp; Murphy (2025) advierten que la IA generativa, si se consume sin criterio reflexivo, puede fomentar un "sedentarismo intelectual" y propagar desinformación masiva. Es imprescindible formar criterio crítico universitario mediante el Aprendizaje Basado en Problemas (ABP) para indagar y verificar activamente fuentes digitales (European Journal of Education, 2025).
+              </p>
             </div>
-          </div>
-          <div class="text-xs text-brand-earthLight bg-brand-cream px-4 py-2 rounded-xl border border-brand-sand/50">
-            Desliza horizontalmente si visualizas en pantallas reducidas
           </div>
         </div>
 
-        <!-- Full Table with Organic Design -->
-        <div class="bg-white rounded-2xl border border-brand-earth/15 shadow-md overflow-hidden" data-aos="zoom-in">
-          <div class="overflow-x-auto custom-scrollbar table-responsive" tabindex="0" role="region" aria-label="Tabla de Rúbrica Analítica de Evaluación">
-            <table class="w-full text-left border-collapse min-w-[900px]">
-              <caption class="sr-only">Rúbrica Analítica para evaluar el Pensamiento Crítico en cuatro niveles: Excelente, Bueno, Regular e Insuficiente</caption>
-              <thead>
-                <tr class="bg-brand-forest text-white border-b border-brand-forest">
-                  <th scope="col" class="p-5 text-sm font-serif font-bold w-1/5">Criterio de Evaluación</th>
-                  <th scope="col" class="p-5 text-sm font-semibold w-1/5 bg-brand-emerald/90 border-l border-white/10">
-                    <div class="flex items-center justify-between">
-                      <span>Excelente</span>
-                      <span class="px-2 py-0.5 rounded bg-white/20 text-xs font-bold">100%</span>
-                    </div>
-                  </th>
-                  <th scope="col" class="p-5 text-sm font-semibold w-1/5 bg-brand-forest border-l border-white/10">
-                    <div class="flex items-center justify-between">
-                      <span>Bueno</span>
-                      <span class="px-2 py-0.5 rounded bg-white/20 text-xs font-bold">75%</span>
-                    </div>
-                  </th>
-                  <th scope="col" class="p-5 text-sm font-semibold w-1/5 bg-brand-forest/90 border-l border-white/10">
-                    <div class="flex items-center justify-between">
-                      <span>Regular</span>
-                      <span class="px-2 py-0.5 rounded bg-white/20 text-xs font-bold">50%</span>
-                    </div>
-                  </th>
-                  <th scope="col" class="p-5 text-sm font-semibold w-1/5 bg-brand-forest/80 border-l border-white/10">
-                    <div class="flex items-center justify-between">
-                      <span>Insuficiente</span>
-                      <span class="px-2 py-0.5 rounded bg-white/20 text-xs font-bold">&le; 25%</span>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-brand-sand/40 text-xs leading-relaxed">
-                
-                <!-- Criterio 1 -->
-                <tr class="hover:bg-brand-cream/50 transition-colors">
-                  <th scope="row" class="p-5 bg-brand-creamLight/60 font-semibold text-brand-forest align-top border-r border-brand-sand/30">
-                    <div class="flex items-center gap-2 mb-2">
-                      <span class="w-6 h-6 rounded-full bg-brand-leaf/20 text-brand-leaf flex items-center justify-center text-xs font-bold">1</span>
-                      <span class="text-sm font-bold font-serif">Análisis de la noticia y contraste de fuentes</span>
-                    </div>
-                    <p class="text-brand-earthLight font-normal">Identificación de tesis, contraste de fuentes y detección crítica de sesgos informativos.</p>
-                  </th>
-                  <td class="p-5 text-brand-forest bg-green-50/30 align-top border-r border-brand-sand/30 font-medium">
-                    Identifica con claridad la tesis principal de la noticia. Contrasta de manera exhaustiva al menos 3 fuentes primarias o secundarias de alta confiabilidad, analizando activamente sesgos, intencionalidad y contexto de publicación.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Identifica la tesis principal de la noticia. Contrasta de 2 a 3 fuentes confiables, detectando sesgos o elementos del contexto, aunque con un nivel de profundidad moderado.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Identifica parcialmente la noticia central. Consulta únicamente 1 o 2 fuentes adicionales o utiliza fuentes de baja confiabilidad sin cuestionar su origen.
-                  </td>
-                  <td class="p-5 text-red-900/80 bg-red-50/20 align-top">
-                    Muestra una comprensión imprecisa de la noticia. No realiza contraste con otras fuentes o utiliza información no verificada para sostener la revisión.
-                  </td>
-                </tr>
+        <!-- 3 Pilares del Instrumento -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+          <div class="p-5 rounded-2xl bg-unemi-subtle/50 border border-unemi-primary/10 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in" data-aos-delay="100">
+            <div class="w-9 h-9 rounded-lg bg-unemi-primary text-white flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" class="w-5 h-5"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+            </div>
+            <h3 class="font-bold text-unemi-primary text-sm mb-1">Indagación ABP</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Resolución de un caso real simulado mediante búsqueda y contrastación exhaustiva.</p>
+          </div>
 
-                <!-- Criterio 2 -->
-                <tr class="hover:bg-brand-cream/50 transition-colors">
-                  <th scope="row" class="p-5 bg-brand-creamLight/60 font-semibold text-brand-forest align-top border-r border-brand-sand/30">
-                    <div class="flex items-center gap-2 mb-2">
-                      <span class="w-6 h-6 rounded-full bg-brand-leaf/20 text-brand-leaf flex items-center justify-center text-xs font-bold">2</span>
-                      <span class="text-sm font-bold font-serif">Argumentación basada en evidencias</span>
-                    </div>
-                    <p class="text-brand-earthLight font-normal">Fundamentación lógica, postura crítica y discriminación rigurosa entre hechos y opiniones.</p>
-                  </th>
-                  <td class="p-5 text-brand-forest bg-green-50/30 align-top border-r border-brand-sand/30 font-medium">
-                    Formula conclusiones sólidamente fundamentadas en los datos extraídos de las fuentes consultadas. Mantiene una postura crítica, coherente y estructurada que distingue con precisión entre hechos, opiniones y datos sesgados.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Construye argumentos claros apoyados en las fuentes consultadas. Distingue en su mayoría hechos de opiniones, aunque con algunas inconsistencias menores en la fundamentación de las conclusiones.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Sus argumentos son superficiales o descriptivos. Presenta dificultades para diferenciar hechos de opiniones y fundamenta sus conclusiones más en apreciaciones personales que en datos contrastados.
-                  </td>
-                  <td class="p-5 text-red-900/80 bg-red-50/20 align-top">
-                    Carece de fundamentación lógica o basada en evidencias. Presenta afirmaciones contradictorias, sin sustento en las fuentes ni análisis crítico observable.
-                  </td>
-                </tr>
+          <div class="p-5 rounded-2xl bg-unemi-subtle/50 border border-unemi-primary/10 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in" data-aos-delay="200">
+            <div class="w-9 h-9 rounded-lg bg-unemi-light text-white flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers" aria-hidden="true" class="w-5 h-5"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
+            </div>
+            <h3 class="font-bold text-unemi-primary text-sm mb-1">Evidencias Trianguladas</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Evaluación sincrónica de producto, proceso dialógico con la IA y autorreflexión metacognitiva.</p>
+          </div>
 
-                <!-- Criterio 3 -->
-                <tr class="hover:bg-brand-cream/50 transition-colors">
-                  <th scope="row" class="p-5 bg-brand-creamLight/60 font-semibold text-brand-forest align-top border-r border-brand-sand/30">
-                    <div class="flex items-center gap-2 mb-2">
-                      <span class="w-6 h-6 rounded-full bg-brand-ochre/20 text-brand-ochre flex items-center justify-center text-xs font-bold">3</span>
-                      <span class="text-sm font-bold font-serif">Prompting y uso crítico de la IA (Gemini / ChatGPT)</span>
-                    </div>
-                    <p class="text-brand-earthLight font-normal">Interrogación reflexiva al modelo, identificación de alucinaciones y calibración de límites.</p>
-                  </th>
-                  <td class="p-5 text-brand-forest bg-green-50/30 align-top border-r border-brand-sand/30 font-medium">
-                    Diseña prompts estructurados y contextualizados para interrogar a la IA. Evalúa críticamente las respuestas obtenidas, identificando posibles alucinaciones o limitaciones del modelo antes de integrarlas al informe.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Diseña prompts adecuados que guían la búsqueda de información. Revisa la utilidad de las respuestas de la IA antes de incorporarlas al informe, aunque sin un análisis profundo de sus sesgos o limitaciones.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Diseña prompts genéricos o poco específicos. Acepta y transcribe de forma directa la información generada por la IA sin verificar la veracidad de los datos aportados.
-                  </td>
-                  <td class="p-5 text-red-900/80 bg-red-50/20 align-top">
-                    No evidencia el uso deliberado de la IA o realiza un copiado directo del output sin formular preguntas de verificación ni analizar la coherencia de la respuesta.
-                  </td>
-                </tr>
-
-                <!-- Criterio 4 -->
-                <tr class="hover:bg-brand-cream/50 transition-colors">
-                  <th scope="row" class="p-5 bg-brand-creamLight/60 font-semibold text-brand-forest align-top border-r border-brand-sand/30">
-                    <div class="flex items-center gap-2 mb-2">
-                      <span class="w-6 h-6 rounded-full bg-brand-earthLight/20 text-brand-earthLight flex items-center justify-center text-xs font-bold">4</span>
-                      <span class="text-sm font-bold font-serif">Uso ético y transparencia de la IA</span>
-                    </div>
-                    <p class="text-brand-earthLight font-normal">Trazabilidad de interacción, declaración de anexos de prompts y autoría académica genuina.</p>
-                  </th>
-                  <td class="p-5 text-brand-forest bg-green-50/30 align-top border-r border-brand-sand/30 font-medium">
-                    Documenta explícitamente el rol de la IA en el proceso (incluye anexo con prompts/outputs) y cita adecuadamente las fuentes consultadas. Demuestra una autoría académica original en la síntesis y redacción final.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Documenta el proceso de interacción con la IA de forma general y cita las fuentes principales. Mantiene la autoría original de sus análisis con escasas omisiones formales.
-                  </td>
-                  <td class="p-5 text-brand-earth align-top border-r border-brand-sand/30">
-                    Registra la interacción con la IA de forma incompleta o confusa. Presenta fallas en el citado de fuentes o fragmentos donde la redacción de la IA no se distingue con claridad del texto propio.
-                  </td>
-                  <td class="p-5 text-red-900/80 bg-red-50/20 align-top">
-                    Oculta o no declara el uso de la IA. Presenta contenido íntegramente generado por la herramienta como propio (plagio o falta de transparencia) y omite el citado de fuentes.
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
+          <div class="p-5 rounded-2xl bg-unemi-subtle/50 border border-unemi-primary/10 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in" data-aos-delay="300">
+            <div class="w-9 h-9 rounded-lg bg-unemi-earth text-white flex items-center justify-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user-check" aria-hidden="true" class="w-5 h-5"><path d="m16 11 2 2 4-4"></path><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+            </div>
+            <h3 class="font-bold text-unemi-primary text-sm mb-1">Validación Humana</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Garantía ética donde el docente y el criterio del alumno prevalecen sobre el output artificial.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SECCIÓN 3: EVIDENCIA IA Y SIMULACIÓN GEMINI (Robert) -->
-    <section id="evidencia-ia" class="py-24 bg-white px-6">
-      <div class="max-w-6xl mx-auto">
+    <!-- SECCIÓN II: RÚBRICA ANALÍTICA DETALLADA -->
+    <section id="rubrica" class="py-14 px-4 sm:px-6 bg-unemi-cream border-b border-unemi-primary/10">
+      <div class="max-w-5xl mx-auto">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-unemi-light mb-2">
+          <span class="w-6 h-0.5 bg-unemi-light inline-block" aria-hidden="true"></span>
+          <span>Capítulo II</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-unemi-primary mb-3" data-aos="fade-right">
+          II. Rúbrica Analítica: Informe de Verificación de Fuentes
+        </h2>
+        <p class="text-sm text-stone-600 mb-6 font-body leading-relaxed" data-aos="fade-up">
+          <strong>Justificación:</strong> La Rúbrica Analítica desglosa el reto cognitivo en cuatro dimensiones esenciales para orientar la retroalimentación formativa y certificar competencias en verificación digital.
+        </p>
+
+        <!-- Ficha técnica del instrumento -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 bg-white p-4 rounded-2xl border border-unemi-primary/15 shadow-sm" data-aos="fade-up">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-ochre" data-aos="fade-up">Fase 3 • Generación de Casos ABP</span>
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-forest mt-2" data-aos="fade-right">
-              3. Evidencia IA: Prompts Sistematizados con Gemini
-            </h2>
+            <span class="text-[10px] uppercase font-bold text-stone-400 block">Asignatura</span>
+            <span class="text-xs font-semibold text-unemi-primary">Competencias Digitales</span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="px-3 py-1 rounded-full bg-brand-forest text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-3.5 h-3.5" aria-hidden="true"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
-              Gemini Pro Educational System
-            </span>
+          <div>
+            <span class="text-[10px] uppercase font-bold text-stone-400 block">Nivel</span>
+            <span class="text-xs font-semibold text-unemi-primary">Universitario (18–25 años)</span>
           </div>
-        </div>
-
-        <!-- Protocol Cards of IA Evidence -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div class="bg-brand-creamLight p-6 rounded-2xl border border-brand-sand/60 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
-            <div class="w-10 h-10 rounded-xl bg-brand-leaf/20 text-brand-leaf flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot w-5 h-5" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
-            </div>
-            <h3 class="font-serif font-bold text-brand-forest text-base mb-2">Herramienta Seleccionada</h3>
-            <p class="text-xs text-brand-earth leading-relaxed">
-              Se optó por <strong>Gemini IA</strong> (Google) para facilitar el diseño del caso de estudio ABP, evaluar sesgos de lenguaje y generar contrapartes simuladas con base en evidencia verídica.
-            </p>
+          <div>
+            <span class="text-[10px] uppercase font-bold text-stone-400 block">Metodología</span>
+            <span class="text-xs font-semibold text-unemi-primary">ABP con apoyo de IA</span>
           </div>
-
-          <div class="bg-brand-creamLight p-6 rounded-2xl border border-brand-sand/60 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-10 h-10 rounded-xl bg-brand-ochre/20 text-brand-ochre flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-5 h-5" aria-hidden="true"><path d="M12 19h8"></path><path d="m4 17 6-6-6-6"></path></svg>
-            </div>
-            <h3 class="font-serif font-bold text-brand-forest text-base mb-2">Sistematización de Prompts</h3>
-            <p class="text-xs text-brand-earth leading-relaxed">
-              Estructuración de instrucciones de rol pedagógico con restricciones de longitud (máx. 200 palabras), estadísticas creíbles e inclusión de <em>notas ocultas para el docente</em>.
-            </p>
-          </div>
-
-          <div class="bg-brand-creamLight p-6 rounded-2xl border border-brand-sand/60 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-10 h-10 rounded-xl bg-brand-forest/20 text-brand-forest flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-2 w-5 h-5" aria-hidden="true"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"></path><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"></path><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"></path><circle cx="12" cy="12" r="10"></circle></svg>
-            </div>
-            <h3 class="font-serif font-bold text-brand-forest text-base mb-2">Despliegue en Entorno Web</h3>
-            <p class="text-xs text-brand-earth leading-relaxed">
-              La noticia falsa fue montada en un sitio web universitario real para reproducir una experiencia auténtica de navegación y auditoría digital en los estudiantes.
-            </p>
+          <div>
+            <span class="text-[10px] uppercase font-bold text-stone-400 block">Producto</span>
+            <span class="text-xs font-semibold text-unemi-primary">Informe Verificación</span>
           </div>
         </div>
 
-        <!-- Prompt Console Card -->
-        <div class="bg-brand-forest text-white rounded-2xl p-6 md:p-8 shadow-xl mb-12" data-aos="zoom-in">
-          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-            <div class="flex items-center gap-3">
-              <span class="w-3 h-3 rounded-full bg-red-400" aria-hidden="true"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-400" aria-hidden="true"></span>
-              <span class="w-3 h-3 rounded-full bg-green-400" aria-hidden="true"></span>
-              <span class="text-xs font-mono text-white/70 ml-2">Prompt 1: Generación del caso de estudio (El material del ABP)</span>
+        <!-- DESPLIEGUE DE LOS 4 CRITERIOS EN CARDS INTERACTIVAS -->
+        <div class="space-y-5">
+          
+          <!-- Criterio 1 -->
+          <div class="bg-white rounded-2xl border border-unemi-primary/15 p-5 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center justify-between pb-3 border-b border-stone-100 mb-4">
+              <div class="flex items-center space-x-3">
+                <span class="w-8 h-8 rounded-xl bg-unemi-primary text-white flex items-center justify-center font-bold text-xs">1</span>
+                <h3 class="text-base sm:text-lg font-bold text-unemi-primary">Argumentación y Contraste de Fuentes</h3>
+              </div>
+              <span class="text-xs font-semibold text-stone-500 bg-stone-100 px-2.5 py-1 rounded-lg">Criterio 1 de 4</span>
             </div>
-            <span class="text-xs font-bold bg-white/10 px-3 py-1 rounded-full text-brand-amberSoft">Instrucción para Gemini</span>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                <span class="font-bold text-emerald-800 block mb-1">Excelente (100%)</span>
+                <p class="text-stone-700 leading-relaxed">Contrasta activamente la noticia con al menos 3 fuentes independientes, primarias o de alta credibilidad. Formula argumentos sólidos y coherentes que fundamentan con rigor la veracidad o falsedad de la información.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200">
+                <span class="font-bold text-blue-800 block mb-1">Bueno (75%)</span>
+                <p class="text-stone-700 leading-relaxed">Contrasta la noticia con 2 o 3 fuentes confiables. Construye argumentos claros que respaldan su postura, aunque presenta ligeras omisiones al analizar el contexto o la intencionalidad.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200">
+                <span class="font-bold text-amber-800 block mb-1">Regular (50%)</span>
+                <p class="text-stone-700 leading-relaxed">Contrasta con solo 1 o 2 fuentes o utiliza referencias de baja credibilidad. Sus argumentos son superficiales, con un balance débil entre los datos hallados y sus conclusiones.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-red-50/70 border border-red-200">
+                <span class="font-bold text-red-800 block mb-1">Insuficiente (≤25%)</span>
+                <p class="text-stone-700 leading-relaxed">No realiza contraste de fuentes o utiliza referencias no verificables. Sus afirmaciones carecen de sustento lógico y se basan en opiniones o intuiciones personales.</p>
+              </div>
+            </div>
           </div>
 
-          <blockquote class="font-mono text-sm leading-relaxed text-brand-cream/90 bg-black/25 p-5 rounded-xl border border-white/5 mb-6">
-            "Actúa como un experto en desinformación digital y educación. Para una actividad de Aprendizaje Basado en Problemas (ABP) con estudiantes universitarios, redacta una noticia falsa pero sumamente realista (máximo 200 palabras) sobre un supuesto avance tecnológico o de salud. Debe tener un titular llamativo, datos estadísticos inventados pero creíbles, y la cita de un supuesto experto. Al final de tu respuesta, agrégame una nota oculta para el docente explicando por qué esta noticia es falsa y qué señales de alerta deberían detectar los estudiantes."
-          </blockquote>
-
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-            <div class="flex items-center gap-2 text-xs text-brand-sand">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-4 h-4 text-brand-leaf" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
-              <span>Resultado: Noticia verosímil con trampas metodológicas para verificación analítica.</span>
+          <!-- Criterio 2 -->
+          <div class="bg-white rounded-2xl border border-unemi-primary/15 p-5 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center justify-between pb-3 border-b border-stone-100 mb-4">
+              <div class="flex items-center space-x-3">
+                <span class="w-8 h-8 rounded-xl bg-unemi-light text-white flex items-center justify-center font-bold text-xs">2</span>
+                <h3 class="text-base sm:text-lg font-bold text-unemi-primary">Verificación y Detección de Sesgos</h3>
+              </div>
+              <span class="text-xs font-semibold text-stone-500 bg-stone-100 px-2.5 py-1 rounded-lg">Criterio 2 de 4</span>
             </div>
-            <span class="text-xs text-white/60 italic font-serif">Simulación realizada en Google Sites institucional</span>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                <span class="font-bold text-emerald-800 block mb-1">Excelente (100%)</span>
+                <p class="text-stone-700 leading-relaxed">Identifica con precisión la veracidad del contenido, detectando sesgos (de confirmación, ideológicos, comerciales), falacias argumentativas y posibles manipulaciones en textos o imágenes.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200">
+                <span class="font-bold text-blue-800 block mb-1">Bueno (75%)</span>
+                <p class="text-stone-700 leading-relaxed">Detecta si el contenido es veraz o engañoso e identifica los sesgos más evidentes en la noticia, aunque pasa por alto detalles técnicos o matices en la intención del autor.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200">
+                <span class="font-bold text-amber-800 block mb-1">Regular (50%)</span>
+                <p class="text-stone-700 leading-relaxed">Presenta dificultades para determinar la veracidad del texto. Identifica sesgos de forma genérica o confunde la postura del autor con la validez de los datos expuestos.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-red-50/70 border border-red-200">
+                <span class="font-bold text-red-800 block mb-1">Insuficiente (≤25%)</span>
+                <p class="text-stone-700 leading-relaxed">Muestra incapacidad para detectar si la noticia es real o falsa. Acepta el contenido de forma acrítica sin cuestionar posibles sesgos ni intenciones ocultas.</p>
+              </div>
+            </div>
           </div>
+
+          <!-- Criterio 3 -->
+          <div class="bg-white rounded-2xl border border-unemi-primary/15 p-5 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center justify-between pb-3 border-b border-stone-100 mb-4">
+              <div class="flex items-center space-x-3">
+                <span class="w-8 h-8 rounded-xl bg-amber-700 text-white flex items-center justify-center font-bold text-xs">3</span>
+                <h3 class="text-base sm:text-lg font-bold text-unemi-primary">Uso Ético y Crítico de la Inteligencia Artificial</h3>
+              </div>
+              <span class="text-xs font-semibold text-stone-500 bg-stone-100 px-2.5 py-1 rounded-lg">Criterio 3 de 4</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                <span class="font-bold text-emerald-800 block mb-1">Excelente (100%)</span>
+                <p class="text-stone-700 leading-relaxed">Emplea la IA para formular preguntas de verificación complejas (prompts contextualizados). Cuestiona críticamente las respuestas del modelo, verifica sus datos y declara explícitamente el uso de la herramienta (anexo de prompts).</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200">
+                <span class="font-bold text-blue-800 block mb-1">Bueno (75%)</span>
+                <p class="text-stone-700 leading-relaxed">Utiliza la IA con prompts adecuados para contrastar hipótesis. Revisa las respuestas antes de incorporarlas y declara el uso de la herramienta, aunque con un nivel básico de validación sobre el output.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200">
+                <span class="font-bold text-amber-800 block mb-1">Regular (50%)</span>
+                <p class="text-stone-700 leading-relaxed">Usa prompts genéricos o poco estructurados. Incorpora las respuestas de la IA directamente al informe con poca revisión crítica y documentación incompleta del proceso de interacción.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-red-50/70 border border-red-200">
+                <span class="font-bold text-red-800 block mb-1">Insuficiente (≤25%)</span>
+                <p class="text-stone-700 leading-relaxed">No evidencia el uso de la IA o presenta textos íntegramente redactados por la herramienta sin revisión, atribución ni declaración de transparencia (plagio o falta de ética).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Criterio 4 -->
+          <div class="bg-white rounded-2xl border border-unemi-primary/15 p-5 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center justify-between pb-3 border-b border-stone-100 mb-4">
+              <div class="flex items-center space-x-3">
+                <span class="w-8 h-8 rounded-xl bg-unemi-earth text-white flex items-center justify-center font-bold text-xs">4</span>
+                <h3 class="text-base sm:text-lg font-bold text-unemi-primary">Calidad del Informe Final</h3>
+              </div>
+              <span class="text-xs font-semibold text-stone-500 bg-stone-100 px-2.5 py-1 rounded-lg">Criterio 4 de 4</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200">
+                <span class="font-bold text-emerald-800 block mb-1">Excelente (100%)</span>
+                <p class="text-stone-700 leading-relaxed">Presenta una estructura lógica, fluida y profesional. Utiliza un lenguaje académico preciso, sin errores ortográficos ni gramaticales, y cita todas las fuentes mediante un formato estandarizado como es normas APA.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200">
+                <span class="font-bold text-blue-800 block mb-1">Bueno (75%)</span>
+                <p class="text-stone-700 leading-relaxed">Estructura el informe de forma clara y legible. Mantiene un lenguaje adecuado con errores ortográficos o gramaticales mínimos que no afectan la comprensión. Cita la mayoría de las fuentes.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200">
+                <span class="font-bold text-amber-800 block mb-1">Regular (50%)</span>
+                <p class="text-stone-700 leading-relaxed">Presenta vacíos en la estructura o en la secuencia lógica del texto. Incurre en errores frecuentes de ortografía, redacción o citado que dificultan la lectura fluida del informe.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-red-50/70 border border-red-200">
+                <span class="font-bold text-red-800 block mb-1">Insuficiente (≤25%)</span>
+                <p class="text-stone-700 leading-relaxed">El informe es desorganizado, incompleto o confuso. Presenta severos problemas de redacción y ortografía, y omite por completo las citas y referencias de las fuentes consultadas.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Web Mockup & External Access Box -->
-        <div class="bg-brand-cream rounded-2xl border border-brand-sand p-8 text-center" data-aos="fade-up">
-          <div class="max-w-2xl mx-auto space-y-4">
-            <div class="inline-flex p-3 rounded-full bg-brand-forest/10 text-brand-forest mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid w-8 h-8" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg>
-            </div>
-            <h3 class="text-2xl font-serif font-bold text-brand-forest">
-              Figura 1: Noticia Falsa Desplegada en Plataforma Web
-            </h3>
-            <p class="text-sm text-brand-earth">
-              Portal interactivo creado para que los universitarios analicen su veracidad, examinen la coherencia de los supuestos expertos y contrasten contra fuentes indexadas:
-            </p>
+      </div>
+    </section>
 
-            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="https://sites.google.com/unemi.edu.ec/noticiasinformativas/full-page-embed" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 rounded-full bg-brand-forest text-white font-bold text-sm hover:bg-brand-emerald shadow-lg transition-all flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-emerald" aria-label="Abrir Sitio de la Noticia Falsa en la plataforma UNEMI en nueva ventana">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe w-4 h-4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                <span>Abrir Sitio de la Noticia Falsa (UNEMI)</span>
+    <!-- SECCIÓN III: EVIDENCIA DEL USO DE IA GEMINI (PROMPTS SISTEMATIZADOS) -->
+    <section id="evidencias" class="py-14 px-4 sm:px-6 bg-white border-b border-unemi-primary/10">
+      <div class="max-w-4xl mx-auto">
+        
+        <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-unemi-light mb-2">
+          <span class="w-6 h-0.5 bg-unemi-light inline-block" aria-hidden="true"></span>
+          <span>Capítulo III</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-unemi-primary mb-3" data-aos="fade-right">
+          III. Uso Sistematizado de Gemini IA en la Construcción Pedagógica
+        </h2>
+        <p class="text-sm text-stone-600 mb-8 font-body leading-relaxed" data-aos="fade-up">
+          Implementación de prompts educativos avanzados para diseñar: el caso de estudio (noticia falsa simulada), la rúbrica, el checklist socrático y el instrumento de autoevaluación.
+        </p>
+
+        <!-- Contenedores de los 4 Prompts con enlaces interactivos -->
+        <div class="space-y-6">
+
+          <!-- PROMPT 1 -->
+          <div class="p-6 rounded-2xl bg-unemi-cream border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-unemi-subtle text-unemi-primary">Prompt 1 • Caso ABP</span>
+              <span class="text-xs text-stone-500">Figura 1 &amp; 2</span>
+            </div>
+            <h3 class="text-base font-bold text-unemi-primary mb-2">Generación de la Noticia Falsa Simulada</h3>
+            <div class="p-4 rounded-xl bg-stone-900 text-emerald-400 font-mono text-xs leading-relaxed mb-3 select-all">
+              "Actúa como un experto en desinformación digital y educación. Para una actividad de Aprendizaje Basado en Problemas (ABP) con estudiantes universitarios, redacta una noticia falsa pero sumamente realista (máximo 200 palabras) sobre un supuesto avance tecnológico o de salud. Debe tener un titular llamativo, datos estadísticos inventados pero creíbles, y la cita de un supuesto experto. Al final de tu respuesta, agrégame una nota oculta para el docente explicando por qué esta noticia es falsa y qué señales de alerta deberían detectar los estudiantes."
+            </div>
+            <p class="text-xs text-stone-600 mb-3 leading-relaxed">
+              <strong>Función Pedagógica:</strong> Proveer un escenario verosímil que active la curiosidad y obligue a contrastar fuentes científicas antes de validar la afirmación.
+            </p>
+            <div class="pt-3 border-t border-stone-200/80 flex items-center justify-between flex-wrap gap-2">
+              <span class="text-xs font-medium text-stone-500">Tabla 1: Sitio Web de Noticia Generada</span>
+              <a href="https://sites.google.com/unemi.edu.ec/noticiasinformativas/full-page-embed" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-unemi-primary hover:text-unemi-accent transition" aria-label="Abrir sitio web de noticia generada en nueva pestaña">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="external-link" aria-hidden="true" class="w-3.5 h-3.5 mr-1"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> Ver Sitio Web / QR de la Noticia
               </a>
             </div>
+          </div>
 
-            <p class="text-xs font-mono text-brand-earthLight pt-2 break-all">
-              URL: https://sites.google.com/unemi.edu.ec/noticiasinformativas/full-page-embed
+          <!-- PROMPT 2 -->
+          <div class="p-6 rounded-2xl bg-unemi-cream border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-unemi-subtle text-unemi-primary">Prompt 2 • Rúbrica</span>
+              <span class="text-xs text-stone-500">Figura 3 &amp; 4</span>
+            </div>
+            <h3 class="text-base font-bold text-unemi-primary mb-2">Diseño Instruccional de la Rúbrica Analítica</h3>
+            <div class="p-4 rounded-xl bg-stone-900 text-emerald-400 font-mono text-xs leading-relaxed mb-3 select-all">
+              "Actúa como un diseñador instruccional experto en evaluación formativa. Diseña el borrador de una rúbrica analítica para evaluar un 'Informe de verificación de fuentes digitales' realizado por estudiantes universitarios. La rúbrica debe tener 4 criterios: 1) Argumentación y contraste de fuentes, 2) Verificación y detección de sesgos, 3) Uso ético y crítico de la Inteligencia Artificial, y 4) Calidad del informe final. Para cada criterio, crea 4 niveles de desempeño (Excelente, Bueno, Regular, Insuficiente) con sus respectivos descriptores. Usa un lenguaje claro, objetivo y adaptado a jóvenes de 18 a 25 años."
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              <strong>Función Pedagógica:</strong> Establecer criterios objetivos de desempeño, facilitando la transparencia y la retroalimentación cualitativa guiada.
             </p>
           </div>
+
+          <!-- PROMPT 3 -->
+          <div class="p-6 rounded-2xl bg-unemi-cream border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-unemi-subtle text-unemi-primary">Prompt 3 • Andamiaje</span>
+              <span class="text-xs text-stone-500">Figura 5 &amp; 6</span>
+            </div>
+            <h3 class="text-base font-bold text-unemi-primary mb-2">Checklist Socrático en Google Forms</h3>
+            <div class="p-4 rounded-xl bg-stone-900 text-emerald-400 font-mono text-xs leading-relaxed mb-3 select-all">
+              "Genera un 'Checklist de verificación' con 5 preguntas socráticas que un estudiante universitario debería hacerle a una Inteligencia Artificial para comprobar si una noticia es verdadera o falsa. Las preguntas deben obligar al estudiante a razonar, contrastar información y no aceptar la primera respuesta de la IA."
+            </div>
+            <div class="pt-3 border-t border-stone-200/80 flex items-center justify-between flex-wrap gap-2">
+              <span class="text-xs font-medium text-stone-500">Tabla 2: Checklist en Google Forms</span>
+              <a href="https://sites.google.com/unemi.edu.ec/checklist-socrtico-verificacin/full-page-embed" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-unemi-primary hover:text-unemi-accent transition" aria-label="Abrir formulario socrático en nueva pestaña">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="external-link" aria-hidden="true" class="w-3.5 h-3.5 mr-1"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> Abrir Formulario Socrático
+              </a>
+            </div>
+          </div>
+
+          <!-- PROMPT 4 -->
+          <div class="p-6 rounded-2xl bg-unemi-cream border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-unemi-subtle text-unemi-primary">Prompt 4 • Metacognición</span>
+              <span class="text-xs text-stone-500">Figura 7 &amp; 8</span>
+            </div>
+            <h3 class="text-base font-bold text-unemi-primary mb-2">Instrumento de Autoevaluación Formativa</h3>
+            <div class="p-4 rounded-xl bg-stone-900 text-emerald-400 font-mono text-xs leading-relaxed mb-3 select-all">
+              "Actúa como un diseñador instruccional experto en evaluación formativa y pensamiento crítico en educación superior. Diseña un 'instrumento de evaluación formativa y autoevaluación del pensamiento crítico' mediante secciones para que estudiantes universitarios (18–25 años) evalúen la veracidad de una noticia digital utilizando modelos de Inteligencia Artificial (ChatGPT, Claude, Gemini)."
+            </div>
+            <div class="pt-3 border-t border-stone-200/80 flex items-center justify-between flex-wrap gap-2">
+              <span class="text-xs font-medium text-stone-500">Tabla 3: Documento de Autoevaluación</span>
+              <span class="inline-flex items-center text-xs font-bold text-unemi-earth">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="file-text" aria-hidden="true" class="w-3.5 h-3.5 mr-1"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg> Instrumento de Evaluación Formativa y Autoevaluación
+              </span>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- SECCIÓN 4: PROTOCOLO DE EVALUACIÓN - 6 PREGUNTAS CLAVE (Carlos Pulla) -->
-    <section id="protocolo" class="py-24 bg-brand-creamLight px-6 border-t border-brand-sand/50">
-      <div class="max-w-6xl mx-auto">
+    <!-- SECCIÓN IV: PROTOCOLO DE EVALUACIÓN (6 PREGUNTAS GUÍA) -->
+    <section id="protocolo" class="py-14 px-4 sm:px-6 bg-unemi-cream border-b border-unemi-primary/10">
+      <div class="max-w-4xl mx-auto">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-leaf" data-aos="fade-up">Fase 4 • Guía Operativa</span>
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-forest mt-2" data-aos="fade-right">
-              4. Protocolo: 6 Preguntas Clave de Evaluación
-            </h2>
-          </div>
-          <div class="flex items-center gap-2 text-xs font-semibold text-brand-earth bg-white px-4 py-2 rounded-xl border border-brand-earth/10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-check w-4 h-4 text-brand-leaf" aria-hidden="true"><path d="M18 6 7 17l-5-5"></path><path d="m22 10-7.5 7.5L13 16"></path></svg>
-            <span>Garantía Ética, Inclusiva y Formativa</span>
-          </div>
+        <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-unemi-light mb-2">
+          <span class="w-6 h-0.5 bg-unemi-light inline-block" aria-hidden="true"></span>
+          <span>Capítulo IV</span>
         </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-unemi-primary mb-3" data-aos="fade-right">
+          IV. Protocolo de Evaluación y Lineamientos de Aplicación
+        </h2>
+        <p class="text-sm text-stone-600 mb-8 font-body leading-relaxed" data-aos="fade-up">
+          Garantiza un proceso formativo, transparente y ético, alineado al uso responsable de la Inteligencia Artificial.
+        </p>
 
-        <!-- 6 Questions Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           <!-- Pregunta 1 -->
-          <div class="bg-white p-7 rounded-2xl border border-brand-earth/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-forest text-white flex items-center justify-center font-bold text-sm font-serif">1</span>
-              <h3 class="text-base font-serif font-bold text-brand-forest">¿A quién está dirigido el instrumento?</h3>
+          <div class="bg-white p-5 rounded-2xl border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2 text-unemi-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="w-5 h-5 text-unemi-accent"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+              <h3 class="font-bold text-sm">1. ¿A quién está dirigido?</h3>
             </div>
-            <p class="text-sm text-brand-earth leading-relaxed">
-              Está dirigido a <strong>estudiantes universitarios de primeros niveles (entre 18 y 25 años)</strong> que cursan la asignatura de <em>Competencias Digitales y Pensamiento Crítico</em>, en modalidades presencial o híbrida.
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Estudiantes universitarios de primeros niveles (entre 18 y 25 años) que cursan la asignatura de <em>Competencias Digitales y Pensamiento Crítico</em> en modalidades presencial o híbrida.
             </p>
-            <div class="mt-4 pt-3 border-t border-brand-sand/40 flex items-center gap-2 text-xs text-brand-leaf font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-3.5 h-3.5" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
-              <span>Población diana: Pregrado universitario inicial</span>
-            </div>
           </div>
 
           <!-- Pregunta 2 -->
-          <div class="bg-white p-7 rounded-2xl border border-brand-earth/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-forest text-white flex items-center justify-center font-bold text-sm font-serif">2</span>
-              <h3 class="text-base font-serif font-bold text-brand-forest">¿Qué se espera observar o medir?</h3>
+          <div class="bg-white p-5 rounded-2xl border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2 text-unemi-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" aria-hidden="true" class="w-5 h-5 text-unemi-accent"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              <h3 class="font-bold text-sm">2. ¿Qué se espera medir?</h3>
             </div>
-            <p class="text-sm text-brand-earth leading-relaxed">
-              Se espera medir el <strong>nivel de desarrollo del pensamiento crítico</strong> frente a entornos digitales. Específicamente su capacidad para identificar información sesgada o falsa, la solidez de sus argumentos basados en evidencias y su habilidad para interactuar de manera ética y reflexiva con <strong>Gemini</strong>.
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Nivel de pensamiento crítico frente a entornos digitales: detección de desinformación, solidez de argumentos con evidencias y capacidad dialógica ética con Gemini IA.
             </p>
-            <div class="mt-4 pt-3 border-t border-brand-sand/40 flex items-center gap-2 text-xs text-brand-leaf font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-3.5 h-3.5" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              <span>Detección de sesgos, argumentación y prompting ético</span>
-            </div>
           </div>
 
           <!-- Pregunta 3 -->
-          <div class="bg-white p-7 rounded-2xl border border-brand-earth/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-leaf text-white flex items-center justify-center font-bold text-sm font-serif">3</span>
-              <h3 class="text-base font-serif font-bold text-brand-forest">¿Cuándo y cómo se aplicará?</h3>
+          <div class="bg-white p-5 rounded-2xl border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2 text-unemi-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" aria-hidden="true" class="w-5 h-5 text-unemi-accent"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path></svg>
+              <h3 class="font-bold text-sm">3. ¿Cuándo y cómo se aplicará?</h3>
             </div>
-            <p class="text-sm text-brand-earth leading-relaxed">
-              Se aplicará de forma híbrida:
-              <br>&bull; <strong>Formativa (Proceso):</strong> Durante las semanas 3 y 4, mediante la revisión del historial de prompts en Gemini, observando la formulación de hipótesis.
-              <br>&bull; <strong>Sumativa (Producto):</strong> Al finalizar la semana 4, evaluando el "Informe de verificación de fuentes" con la rúbrica analítica.
+            <p class="text-xs text-stone-600 leading-relaxed">
+              <strong>Formativa (Semana 3 y 4):</strong> Revisión del historial de prompts e interacción.<br>
+              <strong>Sumativa (Semana 4):</strong> Evaluación del informe final mediante la rúbrica analítica.
             </p>
-            <div class="mt-4 pt-3 border-t border-brand-sand/40 flex items-center gap-2 text-xs text-brand-leaf font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar w-3.5 h-3.5" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path></svg>
-              <span>Semanas 3 &amp; 4 • Proceso y Producto final</span>
-            </div>
           </div>
 
           <!-- Pregunta 4 -->
-          <div class="bg-white p-7 rounded-2xl border border-brand-earth/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-leaf text-white flex items-center justify-center font-bold text-sm font-serif">4</span>
-              <h3 class="text-base font-serif font-bold text-brand-forest">¿Qué información se recogerá?</h3>
+          <div class="bg-white p-5 rounded-2xl border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2 text-unemi-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="folder-check" aria-hidden="true" class="w-5 h-5 text-unemi-accent"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path><path d="m9 13 2 2 4-4"></path></svg>
+              <h3 class="font-bold text-sm">4. ¿Qué información se recogerá?</h3>
             </div>
-            <p class="text-sm text-brand-earth leading-relaxed">
-              Se recopilarán tres tipos de evidencias trianguladas (Unidad 3):
-              <br>1. <strong>Evidencias de producto:</strong> El informe final con la verificación.
-              <br>2. <strong>Evidencias de proceso:</strong> Capturas del chat con Gemini contrastando hipótesis.
-              <br>3. <strong>Evidencias de metacognición:</strong> Párrafo reflexivo sobre el impacto real de la IA en la desinformación.
+            <p class="text-xs text-stone-600 leading-relaxed">
+              <strong>Evidencias Trianguladas:</strong> 1) Producto (informe final), 2) Proceso (capturas del chat con Gemini contrastando hipótesis), y 3) Metacognición (párrafo reflexivo).
             </p>
-            <div class="mt-4 pt-3 border-t border-brand-sand/40 flex items-center gap-2 text-xs text-brand-leaf font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers w-3.5 h-3.5" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
-              <span>Triangulación: Producto + Proceso + Metacognición</span>
-            </div>
           </div>
 
           <!-- Pregunta 5 -->
-          <div class="bg-white p-7 rounded-2xl border border-brand-earth/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-ochre text-white flex items-center justify-center font-bold text-sm font-serif">5</span>
-              <h3 class="text-base font-serif font-bold text-brand-forest">¿Cómo se usará la retroalimentación?</h3>
+          <div class="bg-white p-5 rounded-2xl border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2 text-unemi-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-square-heart" aria-hidden="true" class="w-5 h-5 text-unemi-accent"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path><path d="M7.5 9.5c0 .687.265 1.383.697 1.844l3.009 3.264a1.14 1.14 0 0 0 .407.314 1 1 0 0 0 .783-.004 1.14 1.14 0 0 0 .398-.31l3.008-3.264A2.77 2.77 0 0 0 16.5 9.5 2.5 2.5 0 0 0 12 8a2.5 2.5 0 0 0-4.5 1.5"></path></svg>
+              <h3 class="font-bold text-sm">5. ¿Cómo se usará el feedback?</h3>
             </div>
-            <p class="text-sm text-brand-earth leading-relaxed">
-              Se aplicará el <strong>modelo de retroalimentación inteligente:</strong> oportuna (previa a la calificación final para admitir iteraciones), específica (según los criterios de la rúbrica) y accionable. El docente actúa como validador humano para que el estudiante potencie su razonamiento.
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Retroalimentación inteligente, oportuna (previa a la nota final), específica (por criterios de rúbrica) y accionable. El docente actúa como validador y guía del razonamiento.
             </p>
-            <div class="mt-4 pt-3 border-t border-brand-sand/40 flex items-center gap-2 text-xs text-brand-ochre font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square w-3.5 h-3.5" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>
-              <span>Oportuna, específica, accionable con juicio humano</span>
-            </div>
           </div>
 
           <!-- Pregunta 6 -->
-          <div class="bg-white p-7 rounded-2xl border border-brand-earth/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-earth text-white flex items-center justify-center font-bold text-sm font-serif">6</span>
-              <h3 class="text-base font-serif font-bold text-brand-forest">¿Qué elementos de inclusión y ética se consideran?</h3>
+          <div class="bg-white p-5 rounded-2xl border border-unemi-primary/15 shadow-sm transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2 text-unemi-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="scale" aria-hidden="true" class="w-5 h-5 text-unemi-accent"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
+              <h3 class="font-bold text-sm">6. Ética, Inclusión y Apelación</h3>
             </div>
-            <p class="text-sm text-brand-earth leading-relaxed">
-              &bull; <strong>Ética:</strong> Declaración obligatoria de IA, prohibición de datos personales, prevención de sesgos y <em>derecho a la apelación humana</em>.
-              <br>&bull; <strong>Inclusión:</strong> Noticia entregada en formatos multimodales (texto y audio). Informes finales permitidos en escrito, podcast o video.
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Transparencia obligatoria, protección de datos personales y <strong>derecho a corrección (apelación humana)</strong>. Formatos multimodales inclusivos (texto, audio, podcast o video).
             </p>
-            <div class="mt-4 pt-3 border-t border-brand-sand/40 flex items-center gap-2 text-xs text-brand-earth font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake w-3.5 h-3.5" aria-hidden="true"><path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"></path></svg>
-              <span>Multimodalidad (podcast/video) y derecho a apelación</span>
-            </div>
           </div>
 
         </div>
@@ -747,91 +668,124 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 5: REFLEXIÓN GENERAL & EQUIPO ACADÉMICO (Diego) -->
-    <section id="reflexion" class="py-24 bg-white px-6">
-      <div class="max-w-5xl mx-auto">
+    <!-- SECCIÓN V: REFLEXIÓN, UNIFICACIÓN Y EQUIPO DOCENTE -->
+    <section id="reflexiones" class="py-14 px-4 sm:px-6 bg-white border-b border-unemi-primary/10">
+      <div class="max-w-4xl mx-auto">
         
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-leaf" data-aos="fade-up">Fase 5 • Cierre Metacognitivo</span>
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-forest mt-2" data-aos="fade-right">
-            5. Entrega y Reflexión General
-          </h2>
+        <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-unemi-light mb-2">
+          <span class="w-6 h-0.5 bg-unemi-light inline-block" aria-hidden="true"></span>
+          <span>Capítulo V</span>
         </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-unemi-primary mb-3" data-aos="fade-right">
+          V. Entrega del Trabajo: Reflexiones del Equipo
+        </h2>
+        <p class="text-sm text-stone-600 mb-8 font-body leading-relaxed" data-aos="fade-up">
+          Voces y aprendizajes del equipo maestrante en la integración pedagógica de la Inteligencia Artificial.
+        </p>
 
-        <!-- Reflexión Quote Box -->
-        <div class="relative bg-brand-cream rounded-3xl p-8 md:p-12 border border-brand-sand shadow-sm mb-16" data-aos="fade-up">
-          <div class="absolute -top-5 left-10 w-10 h-10 rounded-full bg-brand-forest text-white flex items-center justify-center shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote w-5 h-5" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
-          </div>
-
-          <div class="space-y-6 text-brand-earth leading-relaxed font-normal text-base md:text-lg">
-            <p>
-              El desarrollo de esta actividad nos permitió comprender la importancia de integrar la inteligencia artificial en los procesos de evaluación educativa de manera crítica, ética y responsable. Durante la construcción del instrumento de evaluación, evidencié que herramientas como <strong>Gemini</strong> pueden apoyar significativamente el diseño de actividades y criterios de valoración, siempre que exista una validación humana que garantice la calidad y pertinencia de los resultados.
-            </p>
-            <p>
-              Asimismo, se fortalecieron conocimientos sobre el diseño de rúbricas analíticas orientadas al desarrollo del pensamiento crítico, especialmente en la identificación de información falsa, la argumentación basada en evidencias y el uso consciente de la inteligencia artificial. Este ejercicio permitió reflexionar sobre el papel del docente como guía y mediador en entornos educativos cada vez más influenciados por las tecnologías emergentes.
-            </p>
-            <p class="font-serif italic text-brand-forest text-xl font-medium border-l-4 border-brand-leaf pl-4 py-1">
-              "La experiencia contribuyó al desarrollo de competencias para planificar evaluaciones más inclusivas, transparentes e innovadoras, alineadas con las necesidades de la educación actual. Reafirma la urgencia de formar estudiantes capaces de analizar con criterio propio y concebir la IA como apoyo, no como sustituto del pensamiento humano."
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECCIÓN: BIBLIOGRAFÍA CIENTÍFICA (Normas APA / 2025) -->
-    <section id="bibliografia" class="py-20 bg-brand-cream px-6 border-t border-brand-sand/70">
-      <div class="max-w-5xl mx-auto">
-        
-        <div class="flex items-center gap-3 mb-8" data-aos="fade-right">
-          <div class="w-10 h-10 rounded-xl bg-brand-forest text-white flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-library w-5 h-5" aria-hidden="true"><path d="m16 6 4 14"></path><path d="M12 6v14"></path><path d="M8 8v12"></path><path d="M4 4v16"></path></svg>
-          </div>
-          <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-leaf">Soporte Epistemológico</span>
-            <h2 class="text-2xl font-serif font-bold text-brand-forest">I. Bibliografía</h2>
-          </div>
-        </div>
-
-        <div class="space-y-4" data-aos="fade-up">
+        <!-- 5 Testimonios de los integrantes -->
+        <div class="space-y-4">
           
-          <div class="p-5 rounded-xl bg-white border border-brand-sand/60 text-xs text-brand-earth leading-relaxed shadow-sm hover:border-brand-leaf transition-colors">
-            <p>
-              <strong>Costa, C., &amp; Murphy, M. (2025).</strong> Generative artificial intelligence in education: (what) are we thinking? <em>Learning, Media and Technology</em>. 
-              <a href="https://doi.org/10.1080/17439884.2025.2518258" target="_blank" rel="noopener noreferrer" class="text-brand-leaf hover:underline ml-1 font-mono focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-emerald" aria-label="Abrir publicación de Costa y Murphy (2025) en DOI (enlace externo)">
-                https://doi.org/10.1080/17439884.2025.2518258
-              </a>
+          <!-- Integrante 1: Carlos Luis Pulla Freire -->
+          <div class="p-5 rounded-2xl bg-unemi-cream border border-unemi-primary/15 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2">
+              <div class="w-9 h-9 rounded-full bg-unemi-primary text-white flex items-center justify-center font-bold text-xs">CP</div>
+              <div>
+                <h3 class="text-sm font-bold text-unemi-primary">Carlos Luis Pulla Freire</h3>
+                <span class="text-[11px] text-stone-500">Diseño del Protocolo y Ética Pedagógica</span>
+              </div>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Diseñar el protocolo de evaluación me permitió comprender que la tecnología por sí sola no garantiza el aprendizaje. Al integrar Gemini como herramienta de apoyo, entendí la importancia de establecer reglas claras sobre su uso ético, transparente y seguro. El reto de evaluar noticias falsas exige que el docente actúe como un mediador que triangula evidencias, y no solo como un calificador. Aprendí que la retroalimentación debe ser accionable y oportuna para que el estudiante realmente mejore su pensamiento crítico. Asimismo, es fundamental incluir el derecho a la corrección y formatos inclusivos para evitar sesgos y barreras digitales. La triangulación de evidencias (producto, proceso y metacognición) me enseñó a valorar el razonamiento del alumno. Finalmente, confirmé que la IA es un excelente andamiaje pedagógico, pero el juicio humano y el vínculo con el estudiante siguen siendo irremplazables.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-white border border-brand-sand/60 text-xs text-brand-earth leading-relaxed shadow-sm hover:border-brand-leaf transition-colors">
-            <p>
-              <strong>European Journal of Education. (2025).</strong> From Query to Knowledge: Evaluating University Students’ Web Search Abilities and Their Connections to Research and Critical Thinking. <em>European Journal of Education</em>. 
-              <a href="https://doi.org/10.1111/ejed.70144" target="_blank" rel="noopener noreferrer" class="text-brand-leaf hover:underline ml-1 font-mono focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-emerald" aria-label="Abrir artículo de European Journal of Education (2025) en DOI (enlace externo)">
-                https://doi.org/10.1111/ejed.70144
-              </a>
+          <!-- Integrante 2: Robert Bryan Merejildo Pincay -->
+          <div class="p-5 rounded-2xl bg-unemi-cream border border-unemi-primary/15 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2">
+              <div class="w-9 h-9 rounded-full bg-unemi-light text-white flex items-center justify-center font-bold text-xs">RM</div>
+              <div>
+                <h3 class="text-sm font-bold text-unemi-primary">Robert Bryan Merejildo Pincay</h3>
+                <span class="text-[11px] text-stone-500">Elaboración de la Rúbrica Analítica</span>
+              </div>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              La elaboración de la rúbrica analítica me permitió comprender la importancia de diseñar instrumentos de evaluación claros, objetivos y alineados con las competencias que se desean desarrollar. Aprendí que evaluar el pensamiento crítico requiere observar no solo los resultados finales, sino también la capacidad de los estudiantes para contrastar fuentes, identificar sesgos y fundamentar sus argumentos con evidencias. Además, entendí que la inteligencia artificial puede ser una aliada valiosa en los procesos educativos siempre que se utilice de manera ética y reflexiva. Esta experiencia fortaleció mi visión sobre la evaluación como una herramienta para promover aprendizajes significativos y no únicamente para asignar una calificación.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-white border border-brand-sand/60 text-xs text-brand-earth leading-relaxed shadow-sm hover:border-brand-leaf transition-colors">
-            <p>
-              <strong>Nie, X., Tian, Y., Liu, M., Wu, D., &amp; Gou, Y. (2025).</strong> The impact of generative artificial intelligence on students’ higher order thinking: Evidence from a three-level meta-analysis. <em>Education and Information Technologies</em>, 30, 25359–25390. 
-              <a href="https://doi.org/10.1007/s10639-025-13735-x" target="_blank" rel="noopener noreferrer" class="text-brand-leaf hover:underline ml-1 font-mono focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-emerald" aria-label="Abrir investigación de Nie y otros (2025) en DOI (enlace externo)">
-                https://doi.org/10.1007/s10639-025-13735-x
-              </a>
+          <!-- Integrante 3: Carlos Andrés Paredes Rosado -->
+          <div class="p-5 rounded-2xl bg-unemi-cream border border-unemi-primary/15 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2">
+              <div class="w-9 h-9 rounded-full bg-unemi-accent text-white flex items-center justify-center font-bold text-xs">CP</div>
+              <div>
+                <h3 class="text-sm font-bold text-unemi-primary">Carlos Andrés Paredes Rosado</h3>
+                <span class="text-[11px] text-stone-500">Diseño de la Actividad ABP y Verificación</span>
+              </div>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              Participar en el diseño de esta actividad me permitió reflexionar sobre los desafíos que enfrentan los estudiantes ante la gran cantidad de información disponible en los entornos digitales. Comprendí que desarrollar habilidades de verificación y análisis crítico es indispensable para identificar noticias falsas y evitar la desinformación. Asimismo, observé que herramientas como Gemini pueden facilitar la búsqueda y organización de información, pero siempre deben complementarse con la validación humana. Esta actividad reafirmó la necesidad de fomentar una cultura académica basada en la ética, la evidencia y el pensamiento crítico.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-white border border-brand-sand/60 text-xs text-brand-earth leading-relaxed shadow-sm hover:border-brand-leaf transition-colors">
-            <p>
-              <strong>Trikoili, A., Georgiou, D., Pappa, C., &amp; Pittich, D. (2025).</strong> Critical Thinking Assessment in Higher Education: A Mixed-Methods Comparative Analysis of AI and Human Evaluator. <em>International Journal of Human–Computer Interaction</em>, 15570-15583. 
-              <a href="https://doi.org/10.1080/10447318.2025.2499164" target="_blank" rel="noopener noreferrer" class="text-brand-leaf hover:underline ml-1 font-mono focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-emerald" aria-label="Abrir investigación de Trikoili y otros (2025) en DOI (enlace externo)">
-                https://doi.org/10.1080/10447318.2025.2499164
-              </a>
+          <!-- Integrante 4: Diego Fernando Baique Chilito -->
+          <div class="p-5 rounded-2xl bg-unemi-cream border border-unemi-primary/15 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2">
+              <div class="w-9 h-9 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold text-xs">DB</div>
+              <div>
+                <h3 class="text-sm font-bold text-unemi-primary">Diego Fernando Baique Chilito</h3>
+                <span class="text-[11px] text-stone-500">Integración de IA en Procesos de Aprendizaje</span>
+              </div>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              El desarrollo de este proyecto me permitió fortalecer mis conocimientos sobre la integración de la inteligencia artificial en los procesos de enseñanza y evaluación. Aprendí que el verdadero valor de herramientas como Gemini no radica en obtener respuestas rápidas, sino en utilizarlas para cuestionar, analizar y profundizar en la información disponible. También comprendí la importancia de diseñar experiencias de aprendizaje que promuevan la autonomía, la reflexión y la toma de decisiones fundamentadas. Esta experiencia me motivó a continuar explorando nuevas estrategias pedagógicas que favorezcan el aprendizaje activo y la formación de ciudadanos digitales críticos y responsables.
             </p>
           </div>
 
+          <!-- Integrante 5: Jimena Jamileth Orellana Rodríguez -->
+          <div class="p-5 rounded-2xl bg-unemi-cream border border-unemi-primary/15 transform transition duration-500 hover:scale-105 hover:shadow-xl" data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-2">
+              <div class="w-9 h-9 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">JO</div>
+              <div>
+                <h3 class="text-sm font-bold text-unemi-primary">Jimena Jamileth Orellana Rodríguez</h3>
+                <span class="text-[11px] text-stone-500">Recursos de Andamiaje y Autoevaluación</span>
+              </div>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed">
+              La construcción de los recursos de apoyo y autoevaluación me permitió valorar la importancia de acompañar al estudiante durante todo su proceso de aprendizaje. Comprendí que las preguntas socráticas y las actividades de reflexión favorecen el desarrollo del pensamiento crítico y ayudan a que los estudiantes no acepten la información de manera pasiva. Además, aprendí que la inteligencia artificial puede convertirse en una herramienta poderosa para el aprendizaje cuando se utiliza para generar cuestionamientos, contrastar información y fortalecer la metacognición. Esta experiencia reafirmó mi compromiso con una educación innovadora, inclusiva y centrada en el desarrollo integral de los estudiantes.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN VI: REFERENCIAS BIBLIOGRÁFICAS -->
+    <section id="referencias" class="py-14 px-4 sm:px-6 bg-unemi-cream">
+      <div class="max-w-4xl mx-auto">
+        
+        <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-unemi-light mb-2">
+          <span class="w-6 h-0.5 bg-unemi-light inline-block" aria-hidden="true"></span>
+          <span>Capítulo VI</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-unemi-primary mb-6" data-aos="fade-right">
+          VI. Referencias Científicas (Normas APA)
+        </h2>
+
+        <div class="space-y-4 text-xs font-body text-stone-700" data-aos="fade-up">
+          <div class="p-4 bg-white rounded-xl border border-unemi-primary/10 shadow-sm pl-6 -indent-4 leading-relaxed">
+            Costa, C., &amp; Murphy, M. (2025). Generative artificial intelligence in education: (what) are we thinking? <em>Learning, Media and Technology</em>. <a href="https://doi.org/10.1080/17439884.2025.2518258" target="_blank" rel="noopener noreferrer" class="text-unemi-light underline hover:text-unemi-primary transition">https://doi.org/10.1080/17439884.2025.2518258</a>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-unemi-primary/10 shadow-sm pl-6 -indent-4 leading-relaxed">
+            European Journal of Education. (2025). From Query to Knowledge: Evaluating University Students’ Web Search Abilities and Their Connections to Research and Critical Thinking. <em>European Journal of Education</em>. <a href="https://doi.org/10.1111/ejed.70144" target="_blank" rel="noopener noreferrer" class="text-unemi-light underline hover:text-unemi-primary transition">https://doi.org/10.1111/ejed.70144</a>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-unemi-primary/10 shadow-sm pl-6 -indent-4 leading-relaxed">
+            Nie, X., Tian, Y., Liu, M., Wu, D., &amp; Gou, Y. (2025). The impact of generative artificial intelligence on students’ higher order thinking: Evidence from a three-level meta-analysis. <em>Education and Information Technologies</em>, 30, 25359–25390. <a href="https://doi.org/10.1007/s10639-025-13735-x" target="_blank" rel="noopener noreferrer" class="text-unemi-light underline hover:text-unemi-primary transition">https://doi.org/10.1007/s10639-025-13735-x</a>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-unemi-primary/10 shadow-sm pl-6 -indent-4 leading-relaxed">
+            Trikoili, A., Georgiou, D., Pappa, C., &amp; Pittich, D. (2025). Critical Thinking Assessment in Higher Education: A Mixed-Methods Comparative Analysis of AI and Human Evaluator. <em>International Journal of Human–Computer Interaction</em>, 15570-15583. <a href="https://doi.org/10.1080/10447318.2025.2499164" target="_blank" rel="noopener noreferrer" class="text-unemi-light underline hover:text-unemi-primary transition">https://doi.org/10.1080/10447318.2025.2499164</a>
+          </div>
         </div>
 
       </div>
@@ -839,27 +793,40 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-brand-forest text-brand-cream/80 py-12 px-6 border-t border-brand-emerald">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-brand-leaf flex items-center justify-center text-white shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award w-4 h-4" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+  <!-- FOOTER INSTITUCIONAL UNEMI -->
+  <footer class="bg-unemi-dark text-white py-10 px-4 sm:px-6 border-t border-white/10">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-unemi-primary text-white flex items-center justify-center font-bold shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="book-open" aria-hidden="true" class="w-5 h-5"><path d="M12 5v16"></path><path d="M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"></path></svg>
         </div>
         <div>
-          <p class="font-bold text-white text-sm">Maestría en Inteligencia Artificial para la Educación</p>
-          <p class="text-brand-sand">Planificación Pedagógica en el Contexto del Aprendizaje Participativo</p>
+          <div class="font-extrabold text-sm tracking-wide">UNIVERSIDAD ESTATAL DE MILAGRO</div>
+          <div class="text-xs text-stone-400">Maestría en Inteligencia Artificial para la Educación</div>
         </div>
       </div>
-      <div class="text-center md:text-right text-brand-sand/70">
-        <p>Tarea de Aprendizaje Autónomo • Entorno Educativo Universitario</p>
-        <p class="mt-1">Carlos Pa. • Jimena • Robert • Carlos Pulla • Diego</p>
+      <div class="text-xs text-stone-400">
+        Tarea de Aprendizaje Autónomo • Módulo de Planificación Pedagógica • Grupo 4
       </div>
     </div>
   </footer>
 
-  <!-- Scripts Locales con Carga Diferida -->
+  <!-- Scripts Vendor Locales con Fallback CDN -->
   <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    if (typeof AOS === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"><\/script>');
+    }
+  </script>
+
+  <script src="assets/vendor/lucide/lucide.min.js"></script>
+  <script>
+    if (typeof lucide === 'undefined') {
+      document.write('<script src="https://unpkg.com/lucide@latest"><\/script>');
+    }
+  </script>
+
+  <!-- Lógica Principal de la Aplicación -->
   <script src="assets/js/main.js"></script>
 
 </body>

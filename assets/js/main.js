@@ -1,24 +1,37 @@
 /**
- * Main Application Logic & Interactivity
- * Evaluación del Pensamiento Crítico con IA Gemini
- * Maestría en IA para la Educación
+ * ==========================================================================
+ * LÓGICA DE INTERACCIÓN Y COMPONENTES DINÁMICOS
+ * Proyecto: Evaluación del Pensamiento Crítico con IA Gemini | UNEMI
+ * Maestría en Inteligencia Artificial para la Educación
+ * ==========================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
   // 1. Inicialización de Lucide Icons
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    window.lucide.createIcons();
-  }
+  const initLucide = () => {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  };
+  initLucide();
 
   // 2. Inicialización de Librería de Animaciones AOS
-  if (window.AOS && typeof window.AOS.init === 'function') {
-    window.AOS.init({
-      once: false,
-      duration: 1000,
-      easing: 'ease',
-      offset: 60,
-    });
-  }
+  const initAOS = () => {
+    if (window.AOS && typeof window.AOS.init === 'function') {
+      // Si el usuario prefiere movimiento reducido, desactivar animaciones de desplazamiento
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.AOS.init({
+        once: false,
+        duration: 1000,
+        easing: 'ease',
+        offset: 40,
+        disable: prefersReducedMotion,
+      });
+    }
+  };
+  initAOS();
 
   // 3. Menú Móvil Accesible (Hamburger Menu)
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -26,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuClose = document.getElementById('mobile-menu-close');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  const toggleMobileMenu = (open) => {
+  const toggleMobileMenu = (forceState) => {
     if (!mobileMenu) return;
-    const shouldOpen = open !== undefined ? open : mobileMenu.classList.contains('hidden');
+    const shouldOpen = forceState !== undefined ? forceState : mobileMenu.classList.contains('hidden');
     if (shouldOpen) {
       mobileMenu.classList.remove('hidden');
       if (mobileMenuBtn) {
@@ -56,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => toggleMobileMenu(false));
   });
 
-  // Cerrar menú móvil con tecla Escape
+  // Cerrar menú con tecla Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
       toggleMobileMenu(false);
@@ -64,38 +77,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Indicador Activo de Navegación por Scroll (Intersection Observer)
-  const navLinks = document.querySelectorAll('header nav a[href^="#"]');
-  const sections = document.querySelectorAll('main section[id]');
+  // 4. Desplazamiento Suave y Accesible para Enlaces Internos
+  const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+  anchorLinks.forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        // Mover el foco accesible para lectores de pantalla
+        targetElement.setAttribute('tabindex', '-1');
+        targetElement.focus({ preventScroll: true });
+        // Actualizar URL sin salto abrupto
+        history.pushState(null, '', targetId);
+      }
+    });
+  });
 
-  if ('IntersectionObserver' in window && sections.length > 0) {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -70% 0px',
-      threshold: 0,
-    };
-
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach((link) => {
-            const href = link.getAttribute('href');
-            if (href === `#${id}`) {
-              link.classList.add('text-brand-leaf', 'font-bold');
-              link.classList.remove('text-brand-forest/80');
-            } else {
-              link.classList.remove('text-brand-leaf', 'font-bold');
-              link.classList.add('text-brand-forest/80');
-            }
-          });
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach((section) => navObserver.observe(section));
-  }
-
-  // 5. Verificación de Carga y Consola Limpia
-  console.log('✓ Proyecto: Evaluación del Pensamiento Crítico inicializado correctamente.');
+  // 5. Verificación de Carga en Consola
+  console.log('✓ UNEMI: Instrumento de Evaluación del Pensamiento Crítico con IA Gemini cargado correctamente.');
 });
+
